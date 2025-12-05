@@ -22,7 +22,7 @@ module.exports = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-33.333%)' },
         }
-      }
+      },
     },
   },
   plugins: [],

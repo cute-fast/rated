@@ -1,7 +1,7 @@
 export default function SmarterBuy() {
 
   return (
-    <div className="py-16 px-6">
+    <div className="py-16 px-6 border-y border-[#E5ECFF]">
       <div className="max-w-[960px] mx-auto">
         <div className="py-8 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-3">

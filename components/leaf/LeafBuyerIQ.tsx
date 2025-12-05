@@ -2,41 +2,48 @@
 
 export default function LeafBuyerIQ() {
     return (
-        <section className="relative overflow-hidden bg-[linear-gradient(to_top_right,_#fcfdff_0%,_#e5ecff_100%)]">
-            {/* Grid Background Pattern */}
-            <div
-                className="absolute inset-0"
-                style={{
-                    backgroundImage: `linear-gradient(to right, rgba(236, 72, 153, 0.1) 1px, transparent 1px)`,
-                    backgroundSize: "80px 100%",
-                }}
-            />
+        <section 
+            className="relative overflow-hidden bg-[#FCFDFF]"
+            style={{
+                background: 'radial-gradient(40.93% 58.91% at 21.22% 46.23%, rgba(18, 3, 172, 0.15) 0%, rgba(229, 236, 255, 0.15) 100%), #FCFDFF'
+            }}
+        >
 
             <div className="max-w-[1440px] relative z-10 mx-auto">
-                <div className="py-8 flex flex-col md:py-0  md:flex-row items-center">
-
-                    <div className="hidden md:block relative">
+                <div className="py-8 flex flex-col md:py-0 md:flex-row items-center md:h-[398px] md:justify-between">
+                    {/* Desktop Image - positioned absolutely, hand coming from left */}
+                    <div className="overflow-hidden hidden md:block relative w-[588px] h-[400px] flex-none order-0 ml-[-25px]">
                         <img
                             src="/hand_phone.png"
                             alt="Hand holding phone showing app performance"
-                            className="hidden md:block max-h-[398px]"
+                            className="absolute rounded-2xl object-contain"
+                            style={{
+                                width: '659px',
+                                height: '517px',
+                                left: 'calc(50% - 659px/2 + 15px)',
+                                top: 'calc(50% - 517px/2 + 0.5px)',
+                                transform: 'rotate(45deg)',
+                            }}
                         />
                     </div>
+                    {/* Mobile Image */}
                     <div className="md:hidden relative w-full">
                         <img
                             src="/hand_phone_mobile.png"
                             alt="Hand holding phone showing app performance"
-                            className="md:hidden w-full max-h-[450px] "
+                            className="w-full max-h-[450px] rounded-2xl"
                         />
                     </div>
 
                     <div className="md:flex-1 flex justify-center">
                         <div className="max-w-xl py-8">
-                            <h4 className="text-4xl font-bold bg-gradient-to-r from-[#D76528] via-[#C2418B] to-[#1D70D1] bg-clip-text text-transparent text-center">
+                            <div className="flex justify-center">
+
+                            <h4 className="inline-flex text-4xl font-bold w-[144px] bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-3">
                                 Buyer IQ
                             </h4>
-
-                            <h2 className="mb-6 font-bold text-gray-900 text-[32px] md:text-[48px] leading-[38px] md:leading-[58px] text-center">The Science of<br />Smart Shopping</h2>
+                            </div>
+                            <h2 className="mb-6 font-bold text-gray-900 text-[48px] md:text-[48px] leading-[38px] md:leading-[58px] text-center">The Science of<br />Smart Shopping</h2>
                             <div className="flex justify-center">
                                 <div className="h-12 p-[2px] rounded-lg bg-gradient-to-r from-[#3D00A6] via-[#E500FF] to-[#080078] w-[170px]">
                                     <button

@@ -6,7 +6,7 @@ interface AccordionSection {
     content: string | React.ReactNode;
 }
 
-export default function ProductAccordion() {
+export default function ProductAccordion({ noWrapper = false }) {
     const [openSection, setOpenSection] = useState<string>('description');
 
     const sections: AccordionSection[] = [
@@ -68,49 +68,57 @@ export default function ProductAccordion() {
         setOpenSection(openSection === title.toLowerCase().replace(/\s+/g, '-') ? '' : title.toLowerCase().replace(/\s+/g, '-'));
     };
 
+    const accordionContent = (
+        <div className="w-full md:max-w-[600px]">
+            <div className="bg-white rounded-lg">
+                {sections.map((section, index) => {
+                    const sectionId = section.title.toLowerCase().replace(/\s+/g, '-');
+                    const isOpen = openSection === sectionId;
+
+                    return (
+                        <div key={sectionId}>
+                            <button
+                                onClick={() => toggleSection(section.title)}
+                                className="w-full flex items-center justify-between py-4 px-0 text-left hover:bg-gray-50 transition-colors"
+                            >
+                                <h3 className={`${isOpen ? 'font-bold' : 'font-normal'} text-gray-900 text-lg`}>
+                                    {section.title}
+                                </h3>
+                                {isOpen ? (
+                                    <ChevronUp className="w-5 h-5 text-gray-700 flex-shrink-0" />
+                                ) : (
+                                    <ChevronDown className="w-5 h-5 text-gray-700 flex-shrink-0" />
+                                )}
+                            </button>
+
+                            {isOpen && (
+                                <div className="pb-4 px-0 animate-fadeIn">
+                                    {typeof section.content === 'string' ? (
+                                        <p className="text-gray-600">{section.content}</p>
+                                    ) : (
+                                        section.content
+                                    )}
+                                </div>
+                            )}
+
+                            {index < sections.length - 1 && (
+                                <hr className="border-gray-200" />
+                            )}
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+    );
+
+    if (noWrapper) {
+        return accordionContent;
+    }
+
     return (
         <section className='px-4'>
             <div className="max-w-[1124px] mx-auto py-8">
-                <div className="w-full md:max-w-[600px]">
-                    <div className="bg-white rounded-lg">
-                        {sections.map((section, index) => {
-                            const sectionId = section.title.toLowerCase().replace(/\s+/g, '-');
-                            const isOpen = openSection === sectionId;
-
-                            return (
-                                <div key={sectionId}>
-                                    <button
-                                        onClick={() => toggleSection(section.title)}
-                                        className="w-full flex items-center justify-between py-4 px-0 text-left hover:bg-gray-50 transition-colors"
-                                    >
-                                        <h3 className="font-bold text-gray-900 text-lg">
-                                            {section.title}
-                                        </h3>
-                                        {isOpen ? (
-                                            <ChevronUp className="w-5 h-5 text-gray-700 flex-shrink-0" />
-                                        ) : (
-                                            <ChevronDown className="w-5 h-5 text-gray-700 flex-shrink-0" />
-                                        )}
-                                    </button>
-
-                                    {isOpen && (
-                                        <div className="pb-4 px-0 animate-fadeIn">
-                                            {typeof section.content === 'string' ? (
-                                                <p className="text-gray-600">{section.content}</p>
-                                            ) : (
-                                                section.content
-                                            )}
-                                        </div>
-                                    )}
-
-                                    {index < sections.length - 1 && (
-                                        <hr className="border-gray-200" />
-                                    )}
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
+                {accordionContent}
             </div>
         </section>
     );

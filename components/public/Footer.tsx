@@ -11,7 +11,10 @@ export default function FooterSection() {
         <div className="flex flex-col md:grid md:grid-cols-[1fr_2fr_1fr_1fr_1fr] gap-8 md:gap-12 mb-12">
           {/* Logo and Description - centered on mobile */}
           <div className="md:col-span-1 md:text-left flex items-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Rated</h2>
+            <a href="/">
+              <img src="./logo_white.png" alt="Rated" className="w-[75px] md:w-[112px]" />
+            </a>
+
           </div>
           <div className="md:col-span-1 md:text-left flex items-center md:pr-4">
             Rated is your intelligent product-discovery platform. We cut through the noise by analyzing millions of
@@ -119,13 +122,13 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+        <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <div className="flex flex-row md:flex-row items-center gap-3 md:gap-6 text-gray-300 text-center">
             <a href="#" className="hover:text-white transition-colors">
               Terms of Use
             </a>
             <a href="#" className="hover:text-white transition-colors">
-              Privacy policy
+              Privacy Policy
             </a>
             <a href="#" className="hover:text-white transition-colors">
               CCPA

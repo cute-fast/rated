@@ -67,12 +67,12 @@ export default function MainHero() {
                     </div>
                 </div>
             </section>
-            <section className="relative flex w-full justify-center bg-[#F5F7FF]">
+            <section className="relative flex w-full justify-center bg-[linear-gradient(360deg,#d7d7f5_0%,#f5f7ff_32.11%)]">
                 <div className="flex w-full flex-col items-center">
                     <div
                         className="flex w-full flex-col items-center gap-[10px] px-4 py-12 
                         md:h-[566px] md:px-16 md:py-0
-                        bg-[radial-gradient(23.59%_23.59%_at_22.15%_48.5%,rgba(6,0,71,0.2)_0%,rgba(18,3,172,0)_100%),linear-gradient(180deg,#06012D_0%,rgba(209,210,243,0)_82.11%),url('/img/cloud.png')]
+                        bg-[radial-gradient(23.59%_23.59%_at_22.15%_48.5%,rgba(6,0,71,0.2)_0%,rgba(18,3,172,0)_100%),linear-gradient(180deg,#06012D_0%,rgba(209,210,243,0)_42.11%),url('/img/cloud.png')]
                         bg-cover bg-bottom bg-no-repeat"
                     >
 
@@ -106,7 +106,7 @@ export default function MainHero() {
                                         Elevate Your <br />Shopping Experience
                                     </h2>
                                     <p className="text-[18px] leading-[25px] text-white/90">
-                                        Rated cuts through the noise, organizing millions of reviews, specs, and performance signals to deliver the best-in-class picks online.
+                                        Rated cuts through the noise by analyzing millions of reviews, specs, and performance signals to deliver the best-in-class options.
                                     </p>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@ export default function MainHero() {
                                     Elevate Your Shopping Experience
                                 </h2>
                                 <p className="w-full text-center text-[15px] leading-[21px] text-white">
-                                    Rated cuts through the noise, organizing millions of reviews, specs, and performance signals to deliver the best-in-class picks online.
+                                    Rated cuts through the noise by analyzing millions of reviews, specs, and performance signals to deliver the best-in-class options.
                                 </p>
                             </div>
                             <div className="relative -bottom-4 -right-4 flex h-[311px] w-[495px] items-center justify-center">

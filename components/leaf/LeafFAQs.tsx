@@ -46,7 +46,7 @@ export default function LeafFAQs() {
   return (
     <div className="py-16 px-6">
       <div className="max-w-[960px] mx-auto">
-        <h2 className="text-3xl font-bold bg-[#F4F7FF] pl-6 pr-4 py-4">FAQs</h2>
+        <h2 className="text-[24px] h-[49px] font-bold bg-[#F4F7FF] items-center flex pl-5">FAQs</h2>
 
         <div className="mb-8">
           {faqItems.map((item) => (
@@ -58,7 +58,7 @@ export default function LeafFAQs() {
                 onClick={() => toggleFAQ(item.id)}
                 className="w-full px-6 py-[30px] flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
-                <span className="text-[15px] font-bold text-gray-900 text-left">
+                <span className="text-[15px] font-extrabold text-gray-900 text-left">
                   {item.question}
                 </span>
                 {openId === item.id ? (
@@ -79,7 +79,7 @@ export default function LeafFAQs() {
           ))}
         </div>
 
-        <div className="py-8 text-center">
+        <div className="pt-10 pb-6 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-3">
             Your Shortcut To Smarter Buys
           </h3>

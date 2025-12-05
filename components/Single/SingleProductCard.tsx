@@ -1,5 +1,6 @@
 import { ChevronDown, Facebook, Twitter, Send } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import ProductAccordion from './ProductAccordion';
 
 export default function SingleProductCard({ product }) {
     const [showBuyerIQ, setShowBuyerIQ] = useState(false);
@@ -46,18 +47,25 @@ export default function SingleProductCard({ product }) {
 
     return (
         <section className='px-4 pt-[64px]'>
-            <div className="max-w-[1124px] mx-auto flex flex-col md:flex-row gap-[24px] md:gap-[64px]">
-                {/* Product Image - Left side on desktop */}
-                <div className="w-full md:max-w-[600px] flex justify-center">
-                    <img
-                        src={product.image_1}
-                        alt={product.name}
-                        className="w-full max-w-[600px] h-auto object-contain"
-                    />
+            <div className="max-w-[1124px] mx-auto flex flex-col md:flex-row gap-[24px] md:gap-[64px] items-start">
+                {/* Product Image and Accordion - Left side on desktop */}
+                <div className="w-full md:max-w-[600px] flex flex-col gap-8">
+                    {/* Product Image */}
+                    <div className="flex justify-center">
+                        <img
+                            src={product.image_1}
+                            alt={product.name}
+                            className="w-full max-w-[600px] h-auto object-contain"
+                        />
+                    </div>
+                    {/* Product Accordion */}
+                    <div className="py-8">
+                        <ProductAccordion noWrapper={true} />
+                    </div>
                 </div>
 
-                {/* Product Information - Right side on desktop */}
-                <div className="w-full flex-1 flex flex-col">
+                {/* Product Information - Right side on desktop (sticky on scroll) */}
+                <div className="w-full flex-1 flex flex-col md:sticky md:top-[96px] md:self-start">
                     {/* Product Title */}
                     <h3 className="font-bold text-[18px] text-gray-900 mb-4 md:text-left">
                         {product.name || product.product_title || 'Product'}
@@ -67,7 +75,7 @@ export default function SingleProductCard({ product }) {
                     <div className="mb-6">
                         {/* Score and stars on same row */}
                         <div className="flex items-center gap-3">
-                            <div className="text-[48px] font-bold text-gray-900 leading-none">
+                            <div className="text-5xl lg:text-[48px] font-bold text-gray-900 leading-none">
                                 {(product.rating || product.score || 0).toFixed(1)}
                             </div>
 
@@ -110,10 +118,10 @@ export default function SingleProductCard({ product }) {
                                 {/* Buyer IQ score button below stars */}
                                 <div ref={mobileDropdownRef}>
                                     <button
-                                        className="flex items-center justify-start gap-1 text-gray-700 font-medium text-sm w-full"
+                                        className="flex items-center justify-start gap-1 text-gray-700 font-medium text-sm w-full cursor-pointer"
                                         onClick={() => setShowBuyerIQ(!showBuyerIQ)}
                                     >
-                                        Buyer IQ score <ChevronDown className={`w-4 h-4 transition-transform ${showBuyerIQ ? 'rotate-180' : ''}`} />
+                                        <strong>Buyer IQ</strong> score  <ChevronDown className={`w-4 h-4 transition-transform ${showBuyerIQ ? 'rotate-180' : ''}`} strokeWidth={3} />
                                     </button>
                                 </div>
                             </div>
@@ -244,17 +252,17 @@ export default function SingleProductCard({ product }) {
                     {/* Action Section */}
                     <div className="mb-6">
                         {product.discount && product.discount > 0 && (
-                            <div className="mb-3 flex items-center gap-2 justify-center">
+                            <div className="mb-2 flex items-center gap-2 justify-center">
                                 <div className="text-[13px] text-gray-600">
                                     3K+ bought in past month
                                 </div>
-                                <div className="bg-[#DCFCE7] text-[#0A6339] font-bold text-[13px] px-1 rounded">
+                                <div className="bg-[#DCFCE7] text-[#0A6339] font-bold text-[13px] px-1 rounded-tl-lg rounded-br-lg">
                                     {product.discount}% OFF
                                 </div>
                             </div>
                         )}
 
-                        <button className="w-full bg-[#16CA92] hover:bg-teal-600 text-white font-bold py-3 rounded-lg transition-colors text-base lg:text-lg mb-3">
+                        <button className="w-full bg-[#16CA92] hover:bg-teal-600 text-white font-bold py-3 rounded-lg transition-colors text-base lg:text-lg mb-2">
                             CHECK PRICE
                         </button>
 

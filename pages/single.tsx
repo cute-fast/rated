@@ -2,7 +2,6 @@ import React from 'react';
 import DisclosureBanner from '../components/public/DisclosureBanner';
 import Header from '../components/public/Header';
 import SingleProductCard from '../components/Single/SingleProductCard';
-import ProductAccordion from '../components/Single/ProductAccordion';
 import ProductCarousel from '../components/Single/ProductCarousel';
 import TrendingLists from '../components/home/TrendingLists';
 import LeafBuyerIQ from '../components/leaf/LeafBuyerIQ';
@@ -34,7 +33,6 @@ export default function SinglePage() {
     <DisclosureBanner />
     <Header />
     <SingleProductCard product={mockProduct} />
-    <ProductAccordion />
     <ProductCarousel />
     <TrendingLists />
     <LeafBuyerIQ />

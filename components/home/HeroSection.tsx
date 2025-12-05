@@ -1,6 +1,6 @@
 "use client"
 import type React from "react"
-import { Search, X, ArrowRight } from "lucide-react"
+import { Search, ArrowRight } from "lucide-react"
 import { useState } from "react"
 import { useIsMobile } from "../../hooks/use-mobile"
 
@@ -45,22 +45,45 @@ export default function HeroSection() {
         setShowHeroSuggestions(false)
     }
 
-    const clearHeroSearch = () => {
-        setHeroSearchValue("")
-        setShowHeroSuggestions(false)
-    }
-
     return (
 
         <section className="px-4">
-            <div className="text-white relative rounded-3xl max-w-[1312px] pt-[118px] md:pt-[0] m-auto">
-                <img className="hidden md:block absolute top-0 left-0 w-full h-full object-cover object-center rounded-3xl" src="./hero_desktop.png" alt="Hero Desktop" />
-                <img className="md:hidden absolute top-0 left-0 w-full h-full object-cover object-center rounded-3xl" src="./hero_mobile.png" alt="Hero Desktop" />
-                <div className="max-w-8xl mx-auto relative">
-                    <div className="px-4 md:px-[106px] py-14 gap-12 items-center">
+            <div className="text-white relative rounded-[16px] max-w-[1312px] pt-[118px] md:pt-[0] m-auto ">
+                <div className="absolute inset-0 rounded-[16px] overflow-hidden">
+                    <video
+                        className="hidden md:block absolute lg:top-[-20%] xl:top-[-32%] right-[-15%] w-full object-cover object-center"
+                        src="./hero.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                    />
+                    
+                    <video
+                        className="md:hidden absolute bottom-0 w-[1312px] h-auto max-w-none left-[-40%] object-cover object-center"
+                        src="./hero.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                    />
+                </div>
+
+                <div className="hidden md:block absolute inset-0 rounded-[16px] bg-[linear-gradient(-90deg,rgba(14,0,222,0)_44%,rgba(10,1,133,1)_63%,rgba(6,1,45,1)_100%)] z-[1]">
+                </div>
+                <div className="md:hidden absolute inset-0 rounded-[16px] bg-[linear-gradient(211deg,rgba(14,0,222,0)_26%,rgba(10,1,133,1)_62%,rgba(6,1,45,1)_75%)] z-[1]">
+                </div>
+
+                <div className="max-w-8xl mx-auto relative z-[10]">
+                    <div className="px-4 md:px-[106px] pt-[93px] pb-[48px] md:pb-[93px] gap-12 items-center">
                         <div>
-                            <h1 className="text-[48px] md:text-[68px] font-bold mb-6 leading-tight">
+                            <h1 className="hidden md:block text-[48px] md:text-[68px] font-bold mb-4 leading-[76px] tracking-[0.02em]">
                                 Smart Shopping,
+                                <br />
+                                Simplified
+                            </h1>
+                            <h1 className="md:hidden text-[48px] md:text-[68px] font-bold mb-6 leading-[58px] tracking-[0.02em]">
+                                Smart<br />Shopping,
                                 <br />
                                 Simplified
                             </h1>
@@ -70,42 +93,33 @@ export default function HeroSection() {
                                 <br />
                                 Simplified
                             </h1> */}
-                            <p className="hidden md:block text-[15px] text-white mb-8">
+                            <p className="hidden md:block text-[15px] text-white mb-6">
                                 Discover top-rated products, powered by big data
                                 <br />and millions of consumer insights
                             </p>
-                            <p className="md:hidden text-[15px text-white mb-8">
+                            <p className="md:hidden text-[15px] text-white mb-6">
                                 Discover top-rated products, powered by big data
                                 and millions of consumer insights
                             </p>
-                            <div className="relative max-w-[390px]">
-                                <div className={`flex items-center bg-white rounded-[5px] overflow-hidden ${showHeroSuggestions && filteredSuggestions.length > 0 && !isMobile && ('rounded-b-none')}`}>
-                                    
+                            <div className="relative w-full md:max-w-[392px] z-[100]">
+                                <div className={`flex items-center bg-white border border-[#4450FF] rounded-[8px] overflow-hidden ${showHeroSuggestions && filteredSuggestions.length > 0 && !isMobile && ('rounded-b-none')}`}>
+
                                     <input
                                         value={heroSearchValue}
                                         onChange={handleHeroSearchChange}
                                         onFocus={handleHeroSearchFocus}
                                         placeholder="Search"
-                                        className="text-xl px-4 flex-1 border-0 bg-transparent text-black placeholder:text-gray-500 focus:outline-none text-base py-4 px-0 text-base"
+                                        className="text-[15px] px-4 flex-1 border-0 bg-transparent text-black placeholder:text-gray-500 focus:outline-none text-base px-0 text-base"
                                     />
-                                    {heroSearchValue && (
-                                        <button
-                                            onClick={clearHeroSearch}
-                                            className="h-10 w-10 p-0 text-gray-400 hover:text-gray-800 hover:bg-gray-100 rounded-full flex items-center justify-center"
-                                        >
-                                            <X className="h-8 w-8" />
-                                        </button>
-                                    )}
-                                    
-                                    <div className="pl-4 pr-2 py-4">
-                                        <Search className="h-8 w-8 text-black" />
+
+                                    <div className="pl-4 pr-[15px] py-[14px]">
+                                        <Search className="h-[24px] w-[24px] text-black" />
                                     </div>
 
                                 </div>
 
-                                {showHeroSuggestions && filteredSuggestions.length > 0 && !isMobile && (
-                                    <div className="absolute top-full left-0 right-0 mt-0 bg-white rounded-b
-                                -lg shadow-lg border z-50 max-h-120 overflow-y-auto">
+                                {showHeroSuggestions && filteredSuggestions.length > 0 && (
+                                    <div className="absolute top-full left-0 right-0 mt-0 bg-white rounded-b-lg shadow-lg border z-[100] max-h-120 overflow-y-auto">
                                         {filteredSuggestions.map((suggestion, index) => (
                                             <button
                                                 key={index}

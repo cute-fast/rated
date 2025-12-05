@@ -99,8 +99,8 @@ export default function ProductCarousel({ products = [] }) {
         <section className='px-4'>
             <div className="max-w-[1307px] mx-auto py-8">
                 <div className="text-center mb-12">
-                    <p className="text-[18px] uppercase text-gray-600 mb-2">TOP RATED</p>
-                    <h2 className="text-[32px] md:text-[48px] font-bold">Similar Products</h2>
+                    <p className="text-lg leading-[18px] uppercase color-[#06012D] tracking-wider">TOP RATED</p>
+                    <h2 className="text-[32px] md:font-semibold text-[48px] leading-[58px] tracking-[0.02em]">Similar Products</h2>
                 </div>
                 <div
                     className="relative"
@@ -152,12 +152,12 @@ export default function ProductCarousel({ products = [] }) {
                                     </div>
 
                                     {/* Product Title */}
-                                    <h4 className="font-semibold text-sm text-gray-900 mb-3 line-clamp-2 min-h-[40px]">
+                                    <h4 className="font-semibold text-sm text-gray-900 mb-3 line-clamp-2 min-h-[40px] text-center">
                                         {product.name}
                                     </h4>
 
                                     {/* Rating and Reviews */}
-                                    <div className="flex items-center gap-2 mb-3">
+                                    <div className="flex justify-center items-center gap-2 mb-3">
                                         <div className="flex gap-0.5">
                                             {[...Array(5)].map((_, i) => (
                                                 <svg
@@ -176,7 +176,7 @@ export default function ProductCarousel({ products = [] }) {
                                     </div>
 
                                     {/* CHECK PRICE Button */}
-                                    <button className="w-full bg-[#16CA92] hover:bg-teal-600 text-white font-bold py-2 rounded-lg transition-colors text-sm">
+                                    <button className="w-[124px] h-[32px] flex items-center justify-center mx-auto bg-[#16CA92] hover:bg-teal-600 text-white text-[14px] leading-5 font-bold py-2 rounded-lg transition-colors tracking-widest">
                                         CHECK PRICE
                                     </button>
                                 </div>

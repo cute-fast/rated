@@ -86,36 +86,36 @@ export default function TrendingLists() {
         <section className="px-4 py-16 bg-white">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <p className="text-[18px] uppercase text-gray-600 mb-2">TOP RATED</p>
-                    <h2 className="text-[32px] md:text-[48px] font-bold">Trending Lists</h2>
+                    <p className="text-[18px] tracking-[0.05em] leading-[18px] uppercase font-semibold">TOP RATED</p>
+                    <h2 className="text-[32px] md:text-[48px] font-bold leading-[58px] tracking-[0.05em]">Trending Lists</h2>
                 </div>
-                
+
                 {/* Desktop View - Show all cards */}
                 <div className="hidden lg:flex flex-wrap justify-center gap-6">
                     {trendingItems.map((item, index) => (
                         <div
                             key={index}
-                            className="w-[190px] h-[224px] bg-white rounded-lg overflow-hidden  cursor-pointer px-[7px] pt-[11px]"
+                            className="w-[190px] bg-white rounded-lg overflow-hidden  cursor-pointer px-[7px] pt-[11px]"
                         >
-                            <div className="w-full h-[190px] flex items-center justify-center bg-[#F9F9F9] border border-[#E5ECFF] rounded-[16px] shadow-lg">
+                            <div className="w-full h-[190px] flex items-center justify-center bg-[#F9F9F9] border border-[#E5ECFF] rounded-[16px] shadow-lg mb-[16px] overflow-hidden">
                                 <img
                                     src={item.image}
                                     alt={item.name}
-                                    className="w-full h-full object-contain"
+                                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-150"
                                 />
                             </div>
-                            <div className="h-[34px] flex items-center justify-center">
-                                <p className="text-sm font-medium text-center px-2">{item.name}</p>
-                            </div>
+
+                            <p className="text-[15px] leading-[23px] font-bold text-center">{item.name}</p>
+
                         </div>
                     ))}
                 </div>
 
                 {/* Mobile View - Carousel */}
                 <div className="lg:hidden">
-                    <div 
-                        className="relative" 
-                        onMouseEnter={() => setIsHovered(true)} 
+                    <div
+                        className="relative"
+                        onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
                         {/* Navigation Arrows */}
@@ -150,18 +150,19 @@ export default function TrendingLists() {
                                 {trendingItems.map((item, index) => (
                                     <div
                                         key={index}
-                                        className="flex-shrink-0 w-[190px] h-[224px] bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+                                        className="flex-shrink-0 w-[190px] bg-white rounded-lg overflow-hidden transition-shadow cursor-pointer"
                                     >
-                                        <div className="w-full h-[190px] flex items-center justify-center bg-gray-50">
+
+                                        <div className="w-full h-[190px] flex items-center justify-center bg-[#F9F9F9] border border-[#E5ECFF] rounded-[16px] shadow-lg mb-[16px] overflow-hidden">
                                             <img
                                                 src={item.image}
                                                 alt={item.name}
-                                                className="w-full h-full object-contain p-4"
+                                                className="w-full h-full object-contain transition-transform duration-300 hover:scale-150"
                                             />
                                         </div>
-                                        <div className="h-[34px] flex items-center justify-center">
-                                            <p className="text-sm font-medium text-center px-2">{item.name}</p>
-                                        </div>
+
+                                        <p className="text-[15px] leading-[23px] font-bold text-center">{item.name}</p>
+
                                     </div>
                                 ))}
                             </div>
@@ -172,9 +173,9 @@ export default function TrendingLists() {
                             <div className="relative w-full max-w-md h-1 overflow-hidden">
                                 {/* Full bar background (light gray) */}
                                 <div className="absolute inset-0 bg-gray-200" />
-                                
+
                                 {/* Progress segment (dark) with smooth fade edges */}
-                                <div 
+                                <div
                                     className="absolute inset-y-0 left-0 transition-all duration-300 ease-out"
                                     style={{
                                         width: `${maxIndex > 0 ? ((currentIndex + 1) / (maxIndex + 1)) * 100 : 100}%`,

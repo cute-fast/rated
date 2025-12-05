@@ -33,7 +33,7 @@ export default function PopularSearches() {
             <Link
               key={index}
               href={`/search?q=${encodeURIComponent(search)}`}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#E8E8FF] hover:bg-[#D8D8FF] rounded-lg text-[#0E033B] font-medium transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#f4f7ff] hover:bg-[#D8D8FF] rounded-lg text-[#000000] font-semibold transition-colors"
             >
               <Search className="w-4 h-4" />
               <span className="text-[11px]">{search}</span>

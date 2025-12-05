@@ -30,7 +30,7 @@ export default function Newsletter() {
       </div>
 
       <div className="container relative z-10 mx-auto max-w-4xl px-8 text-center">
-        <h2 className="mb-4 text-2xl font-bold text-white md:text-2xl">
+        <h2 className="mb-1 text-2xl font-bold text-white md:text-2xl">
           Rated Updates & Insights
         </h2>
         <p className="mb-4 text-lg text-white/90">
@@ -84,7 +84,7 @@ export default function Newsletter() {
                 )}
               </div>
 
-              <span className="ml-2 text-sm text-white/80">
+              <span className="text-[#ABBDFF] ml-2 text-sm text-white/80">
                 I agree to the{" "}
                 <a href="#" className="underline hover:text-white">Terms of Use</a> and{" "}
                 <a href="#" className="underline hover:text-white">Privacy Policy</a>.
