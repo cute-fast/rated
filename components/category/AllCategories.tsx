@@ -15,7 +15,425 @@ interface Category {
 
 const categories: Category[] = [
   {
-    name: "Home & Kitchen",
+    name: "Home & Kitchen1",
+    slug: "home-kitchen1",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen2",
+    slug: "home-kitchen2",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen3",
+    slug: "home-kitchen3",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen4",
+    slug: "home-kitchen4",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen5",
+    slug: "home-kitchen5",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen6",
+    slug: "home-kitchen6",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen7",
+    slug: "home-kitchen7",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen8",
+    slug: "home-kitchen8",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen9",
+    slug: "home-kitchen9",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen11",
+    slug: "home-kitchen11",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen12",
+    slug: "home-kitchen12",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen13",
+    slug: "home-kitchen13",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen14",
+    slug: "home-kitchen14",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen15",
+    slug: "home-kitchen15",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen16",
+    slug: "home-kitchen16",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen17",
+    slug: "home-kitchen17",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen18",
+    slug: "home-kitchen18",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen19",
+    slug: "home-kitchen19",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen20",
+    slug: "home-kitchen20",
+    icon: "/categories/home-kitchen.png",
+    icon2: "/categories/home-kitchen-b.png",
+    backgroundImage: "/categories/home-kitchen.jpg",
+    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
+    allSubCategories: [
+      "Patio, Lawn & Garden",
+      "Appliances",
+      "Kitchen & Dining",
+      "Home Decor",
+      "Furniture",
+      "Storage & Organization",
+      "Smart Home",
+      "Cleaning Supplies",
+      "Bath",
+      "Lighting",
+      "Floor Care",
+      "Seasonal Decor"
+    ]
+  },
+  {
+    name: "Home & Kitchen21",
     slug: "home-kitchen",
     icon: "/categories/home-kitchen.png",
     icon2: "/categories/home-kitchen-b.png",
@@ -37,8 +455,8 @@ const categories: Category[] = [
     ]
   },
   {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
+    name: "Home & Kitchen22",
+    slug: "home-kitchen22",
     icon: "/categories/home-kitchen.png",
     icon2: "/categories/home-kitchen-b.png",
     backgroundImage: "/categories/home-kitchen.jpg",
@@ -59,8 +477,8 @@ const categories: Category[] = [
     ]
   },
   {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
+    name: "Home & Kitchen23",
+    slug: "home-kitchen23",
     icon: "/categories/home-kitchen.png",
     icon2: "/categories/home-kitchen-b.png",
     backgroundImage: "/categories/home-kitchen.jpg",
@@ -81,8 +499,8 @@ const categories: Category[] = [
     ]
   },
   {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
+    name: "Home & Kitchen24",
+    slug: "home-kitchen24",
     icon: "/categories/home-kitchen.png",
     icon2: "/categories/home-kitchen-b.png",
     backgroundImage: "/categories/home-kitchen.jpg",
@@ -103,8 +521,8 @@ const categories: Category[] = [
     ]
   },
   {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
+    name: "Home & Kitchen25",
+    slug: "home-kitchen25",
     icon: "/categories/home-kitchen.png",
     icon2: "/categories/home-kitchen-b.png",
     backgroundImage: "/categories/home-kitchen.jpg",
@@ -125,8 +543,8 @@ const categories: Category[] = [
     ]
   },
   {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
+    name: "Home & Kitchen26",
+    slug: "home-kitchen26",
     icon: "/categories/home-kitchen.png",
     icon2: "/categories/home-kitchen-b.png",
     backgroundImage: "/categories/home-kitchen.jpg",
@@ -147,448 +565,8 @@ const categories: Category[] = [
     ]
   },
   {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
-    icon: "/categories/home-kitchen.png",
-    icon2: "/categories/home-kitchen-b.png",
-    backgroundImage: "/categories/home-kitchen.jpg",
-    featuredSubCategories: ["Patio, Lawn & Garden", "Electronics", "Kitchen & Dining", "Home Decor", "Storage & Organization"],
-    allSubCategories: [
-      "Patio, Lawn & Garden",
-      "Appliances",
-      "Kitchen & Dining",
-      "Home Decor",
-      "Furniture",
-      "Storage & Organization",
-      "Smart Home",
-      "Cleaning Supplies",
-      "Bath",
-      "Lighting",
-      "Floor Care",
-      "Seasonal Decor"
-    ]
-  },
-  {
-    name: "Home & Kitchen",
-    slug: "home-kitchen",
+    name: "Home & Kitchen27",
+    slug: "home-kitchen27",
     icon: "/categories/home-kitchen.png",
     icon2: "/categories/home-kitchen-b.png",
     backgroundImage: "/categories/home-kitchen.jpg",
@@ -622,7 +600,7 @@ export default function AllCategories() {
     }))
   }
   return (
-    <section className="bg-white pt-4 px-4 pb-16">
+    <section className="bg-white pt-4 px-4 md:pb-16">
       <div className="max-w-[1312px] mx-auto">
         {/* Breadcrumbs */}
         <nav className="flex items-center gap-2 text-sm text-gray-500 py-[16px]">
@@ -646,7 +624,7 @@ export default function AllCategories() {
           )}
         </nav>
         {!activeMobileCategory && (
-        <h2 className="text-[32px] md:text-[48px] font-bold text-[#0E033B] mt-0">All Categories</h2>
+        <h2 className="text-[32px] md:text-[48px] font-bold text-[#0E033B] mt-0 mb-6">All Categories</h2>
         )}
         <div className="md:pt-[32px] md:px-[96px]">
           

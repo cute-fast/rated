@@ -2,7 +2,7 @@ export default function Star({ rating }) {
 
     return (
         <>
-            <div className="flex justify-center mt-2">
+            <div className="flex justify-center">
                 {
                     [...Array(5)].map((_, i) => {
                         const starValue = rating / 2; // Convert 10-point scale to 5-star scale

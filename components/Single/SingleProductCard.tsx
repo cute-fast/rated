@@ -4,7 +4,9 @@ import ProductAccordion from './ProductAccordion';
 
 export default function SingleProductCard({ product }) {
     const [showBuyerIQ, setShowBuyerIQ] = useState(false);
+    const [showFloatingCTA, setShowFloatingCTA] = useState(false);
     const mobileDropdownRef = useRef(null);
+    const productInfoRef = useRef(null);
 
     // Close dropdown when clicking outside on mobile
     useEffect(() => {
@@ -22,6 +24,32 @@ export default function SingleProductCard({ product }) {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [showBuyerIQ]);
+
+    // Intersection Observer to detect when product info section is out of view
+    useEffect(() => {
+        if (!productInfoRef.current) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    // Show floating CTA when the product info section is completely out of view
+                    setShowFloatingCTA(!entry.isIntersecting);
+                });
+            },
+            {
+                threshold: 0, // Trigger when any part is out of view
+                rootMargin: '0px',
+            }
+        );
+
+        observer.observe(productInfoRef.current);
+
+        return () => {
+            if (productInfoRef.current) {
+                observer.unobserve(productInfoRef.current);
+            }
+        };
+    }, []);
 
     // Share functionality
     const handleShare = (platform) => {
@@ -46,7 +74,7 @@ export default function SingleProductCard({ product }) {
     };
 
     return (
-        <section className='px-4 pt-[64px]'>
+        <section className='px-4 pt-[24px] md:pt-[64px]'>
             <div className="max-w-[1124px] mx-auto flex flex-col md:flex-row gap-[24px] md:gap-[64px] items-start">
                 {/* Product Image and Accordion - Left side on desktop */}
                 <div className="w-full md:max-w-[600px] flex flex-col gap-8">
@@ -59,176 +87,180 @@ export default function SingleProductCard({ product }) {
                         />
                     </div>
                     {/* Product Accordion */}
-                    <div className="py-8">
+                    <div className="py-8 hidden md:block w-full">
                         <ProductAccordion noWrapper={true} />
                     </div>
                 </div>
 
                 {/* Product Information - Right side on desktop (sticky on scroll) */}
-                <div className="w-full flex-1 flex flex-col md:sticky md:top-[96px] md:self-start">
+                <div ref={productInfoRef} className="w-full flex-1 flex flex-col md:sticky md:top-[96px] md:self-start">
                     {/* Product Title */}
-                    <h3 className="font-bold text-[18px] text-gray-900 mb-4 md:text-left">
-                        {product.name || product.product_title || 'Product'}
-                    </h3>
+
+                    <div className="flex flex-col-reverse md:flex-col">
+                        <h3 className="font-bold text-[18px] text-gray-900 mb-4 md:text-left">
+                            {product.name || product.product_title || 'Product'}
+                        </h3>
+                        <div className="mb-6">
+                            {/* Score and stars on same row */}
+                            <div className="flex items-center justify-center md:justify-start gap-3">
+                                <div className="text-5xl lg:text-[48px] font-bold text-gray-900 leading-none">
+                                    {(product.rating || product.score || 0).toFixed(1)}
+                                </div>
+
+                                <div className="flex flex-col">
+                                    {/* Stars */}
+                                    <div className="flex gap-1">
+                                        {[...Array(5)].map((_, i) => {
+                                            const rating = product.rating || product.score || 0;
+                                            const starValue = rating / 2;
+                                            const filledStars = Math.floor(starValue);
+                                            const partialFill = starValue - filledStars;
+                                            const isFullyFilled = i < filledStars;
+                                            const isPartiallyFilled = i === filledStars && partialFill > 0;
+                                            const fillPercentage = isPartiallyFilled ? partialFill * 100 : (isFullyFilled ? 100 : 0);
+
+                                            return (
+                                                <div key={i} className="relative w-5 h-5">
+                                                    <svg
+                                                        className="w-5 h-5 text-gray-300 absolute inset-0"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 20 20"
+                                                    >
+                                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                                    </svg>
+                                                    <svg
+                                                        className="w-5 h-5 text-[#16CA92] absolute inset-0"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 20 20"
+                                                        style={{
+                                                            clipPath: `inset(0 ${100 - fillPercentage}% 0 0)`
+                                                        }}
+                                                    >
+                                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                                    </svg>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+
+                                    {/* Buyer IQ score button below stars */}
+                                    <div ref={mobileDropdownRef}>
+                                        <button
+                                            className="flex items-center justify-start gap-1 text-gray-700 font-medium text-sm w-full"
+                                            onClick={() => setShowBuyerIQ(!showBuyerIQ)}
+                                        >
+                                            <strong>Buyer IQ</strong> score  <ChevronDown className={`w-4 h-4 transition-transform ${showBuyerIQ ? 'rotate-180' : ''}`} strokeWidth={3} />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Buyer IQ expandable content */}
+                            {showBuyerIQ && (
+                                <div className="w-full mb-4">
+                                    <div className="space-y-3">
+                                        {product.performance !== undefined && (
+                                            <div>
+                                                <div className="flex justify-between items-center mb-1">
+                                                    <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Performance</span>
+                                                    <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">{product.performance.toFixed(1)}/10</span>
+                                                </div>
+                                                <div className="font-weight-400 text-[11px] text-[#06012D] mb-2 text-left">Delivers results that match everyday expectations</div>
+                                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                                    <div
+                                                        className="h-2 rounded-full transition-all"
+                                                        style={{
+                                                            width: `${(product.performance / 10) * 100}%`,
+                                                            backgroundColor: '#D76528'
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {product.reliability !== undefined && (
+                                            <div>
+                                                <div className="flex justify-between items-center mb-1">
+                                                    <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Reliability</span>
+                                                    <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">{product.reliability.toFixed(1)}/10</span>
+                                                </div>
+                                                <div className="font-weight-400 text-[11px] text-[#06012D] mb-2 text-left">Dependable through repeated use</div>
+                                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                                    <div
+                                                        className="h-2 rounded-full transition-all"
+                                                        style={{
+                                                            width: `${(product.reliability / 10) * 100}%`,
+                                                            backgroundColor: '#00C386'
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {product.value !== undefined && (
+                                            <div>
+                                                <div className="flex justify-between items-center mb-1">
+                                                    <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Value</span>
+                                                    <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">{product.value.toFixed(1)}/10</span>
+                                                </div>
+                                                <div className="font-weight-400 text-[11px] text-[#06012D] mb-2 text-left">Gives strong quality and features for the price paid</div>
+                                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                                    <div
+                                                        className="h-2 rounded-full transition-all"
+                                                        style={{
+                                                            width: `${(product.value / 10) * 100}%`,
+                                                            backgroundColor: '#C2418B'
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {product.popularity !== undefined && (
+                                            <div>
+                                                <div className="flex justify-between items-center mb-1">
+                                                    <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Popularity</span>
+                                                    <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">{product.popularity.toFixed(1)}/10</span>
+                                                </div>
+                                                <div className="font-weight-400 text-[11px] text-[#06012D] mb-2 text-left">Highly rated and recommended by real buyers</div>
+                                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                                    <div
+                                                        className="h-2 rounded-full transition-all"
+                                                        style={{
+                                                            width: `${(product.popularity / 10) * 100}%`,
+                                                            backgroundColor: '#9E53D6'
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {product.support !== undefined && (
+                                            <div>
+                                                <div className="flex justify-between items-center mb-1">
+                                                    <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Support</span>
+                                                    <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">{product.support.toFixed(1)}/10</span>
+                                                </div>
+                                                <div className="font-weight-400 text-[11px] text-[#06012D] mb-2 text-left">Quick, helpful service with clear warranty coverage</div>
+                                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                                    <div
+                                                        className="h-2 rounded-full transition-all"
+                                                        style={{
+                                                            width: `${(product.support / 10) * 100}%`,
+                                                            backgroundColor: '#1D70D1'
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
 
                     {/* Rating Section */}
-                    <div className="mb-6">
-                        {/* Score and stars on same row */}
-                        <div className="flex items-center gap-3">
-                            <div className="text-5xl lg:text-[48px] font-bold text-gray-900 leading-none">
-                                {(product.rating || product.score || 0).toFixed(1)}
-                            </div>
 
-                            <div className="flex flex-col">
-                                {/* Stars */}
-                                <div className="flex gap-1">
-                                    {[...Array(5)].map((_, i) => {
-                                        const rating = product.rating || product.score || 0;
-                                        const starValue = rating / 2;
-                                        const filledStars = Math.floor(starValue);
-                                        const partialFill = starValue - filledStars;
-                                        const isFullyFilled = i < filledStars;
-                                        const isPartiallyFilled = i === filledStars && partialFill > 0;
-                                        const fillPercentage = isPartiallyFilled ? partialFill * 100 : (isFullyFilled ? 100 : 0);
-
-                                        return (
-                                            <div key={i} className="relative w-5 h-5">
-                                                <svg
-                                                    className="w-5 h-5 text-gray-300 absolute inset-0"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                >
-                                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                                                </svg>
-                                                <svg
-                                                    className="w-5 h-5 text-[#16CA92] absolute inset-0"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    style={{
-                                                        clipPath: `inset(0 ${100 - fillPercentage}% 0 0)`
-                                                    }}
-                                                >
-                                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                                                </svg>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-
-                                {/* Buyer IQ score button below stars */}
-                                <div ref={mobileDropdownRef}>
-                                    <button
-                                        className="flex items-center justify-start gap-1 text-gray-700 font-medium text-sm w-full cursor-pointer"
-                                        onClick={() => setShowBuyerIQ(!showBuyerIQ)}
-                                    >
-                                        <strong>Buyer IQ</strong> score  <ChevronDown className={`w-4 h-4 transition-transform ${showBuyerIQ ? 'rotate-180' : ''}`} strokeWidth={3} />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Buyer IQ expandable content */}
-                        {showBuyerIQ && (
-                            <div className="w-full mb-4">
-                                <div className="space-y-3">
-                                    {product.performance !== undefined && (
-                                        <div>
-                                            <div className="flex justify-between items-center mb-1">
-                                                <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Performance</span>
-                                                <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">{product.performance.toFixed(1)}/10</span>
-                                            </div>
-                                            <div className="font-weight-400 text-[11px] text-[#06012D] mb-2 text-left">Delivers results that match everyday expectations</div>
-                                            <div className="w-full bg-gray-200 rounded-full h-2">
-                                                <div
-                                                    className="h-2 rounded-full transition-all"
-                                                    style={{
-                                                        width: `${(product.performance / 10) * 100}%`,
-                                                        backgroundColor: '#D76528'
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                    )}
-
-                                    {product.reliability !== undefined && (
-                                        <div>
-                                            <div className="flex justify-between items-center mb-1">
-                                                <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Reliability</span>
-                                                <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">{product.reliability.toFixed(1)}/10</span>
-                                            </div>
-                                            <div className="font-weight-400 text-[11px] text-[#06012D] mb-2 text-left">Dependable through repeated use</div>
-                                            <div className="w-full bg-gray-200 rounded-full h-2">
-                                                <div
-                                                    className="h-2 rounded-full transition-all"
-                                                    style={{
-                                                        width: `${(product.reliability / 10) * 100}%`,
-                                                        backgroundColor: '#00C386'
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                    )}
-
-                                    {product.value !== undefined && (
-                                        <div>
-                                            <div className="flex justify-between items-center mb-1">
-                                                <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Value</span>
-                                                <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">{product.value.toFixed(1)}/10</span>
-                                            </div>
-                                            <div className="font-weight-400 text-[11px] text-[#06012D] mb-2 text-left">Gives strong quality and features for the price paid</div>
-                                            <div className="w-full bg-gray-200 rounded-full h-2">
-                                                <div
-                                                    className="h-2 rounded-full transition-all"
-                                                    style={{
-                                                        width: `${(product.value / 10) * 100}%`,
-                                                        backgroundColor: '#C2418B'
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                    )}
-
-                                    {product.popularity !== undefined && (
-                                        <div>
-                                            <div className="flex justify-between items-center mb-1">
-                                                <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Popularity</span>
-                                                <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">{product.popularity.toFixed(1)}/10</span>
-                                            </div>
-                                            <div className="font-weight-400 text-[11px] text-[#06012D] mb-2 text-left">Highly rated and recommended by real buyers</div>
-                                            <div className="w-full bg-gray-200 rounded-full h-2">
-                                                <div
-                                                    className="h-2 rounded-full transition-all"
-                                                    style={{
-                                                        width: `${(product.popularity / 10) * 100}%`,
-                                                        backgroundColor: '#9E53D6'
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                    )}
-
-                                    {product.support !== undefined && (
-                                        <div>
-                                            <div className="flex justify-between items-center mb-1">
-                                                <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Support</span>
-                                                <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">{product.support.toFixed(1)}/10</span>
-                                            </div>
-                                            <div className="font-weight-400 text-[11px] text-[#06012D] mb-2 text-left">Quick, helpful service with clear warranty coverage</div>
-                                            <div className="w-full bg-gray-200 rounded-full h-2">
-                                                <div
-                                                    className="h-2 rounded-full transition-all"
-                                                    style={{
-                                                        width: `${(product.support / 10) * 100}%`,
-                                                        backgroundColor: '#1D70D1'
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        )}
-                    </div>
 
                     {/* Product Features */}
                     <div className="mb-6">
@@ -308,7 +340,64 @@ export default function SingleProductCard({ product }) {
                         </div>
                     </div>
                 </div>
+
+                <div className="pt-2 pb-8 md:hidden border-t w-full">
+                    <ProductAccordion noWrapper={true} />
+                </div>
             </div>
+
+
+
+
+            {/* Floating CTA Button - appears when product info section is out of view */}
+            {showFloatingCTA && (
+                <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 px-4 py-3 md:px-6 md:py-4">
+                    <div className="max-w-[1312px] mx-auto flex flex-col md:flex-row items-center gap-2 md:gap-4">
+                        {/* Product Icon/Image */}
+                        <div className="flex-shrink-0 hidden md:block">
+                            <img
+                                src={product.image_1}
+                                alt={product.name}
+                                className="w-16 h-16 object-contain"
+                            />
+                        </div>
+
+                        {/* Product Name */}
+                        <div className="flex-1 min-w-0 hidden md:block">
+                            <h4 className="font-bold text-[16px] text-gray-900 truncate">
+                                {product.name || product.product_title || 'Product Name Here'}
+                            </h4>
+                        </div>
+
+                        {/* Discount and Stats */}
+                        <div className="flex flex-row-reverse gap-2 items-center md:items-end md:flex-col">
+                            {product.discount && product.discount > 0 && (
+                                <>
+                                    <div className="flex justify-end">
+                                        <div className="bg-[#DCFCE7] text-[#0A6339] font-bold text-[13px] px-2 rounded-lg">
+                                            {product.discount}% OFF
+                                        </div>
+                                    </div>
+                                    <div className="text-[13px] text-gray-600">
+                                        3K+ bought in past month
+                                    </div>
+
+                                </>
+                            )}
+                            {(!product.discount || product.discount === 0) && (
+                                <div className="text-[13px] text-gray-600">
+                                    3K+ bought in past month
+                                </div>
+                            )}
+                        </div>
+
+                        {/* CTA Button */}
+                        <button className="bg-[#16CA92] hover:bg-teal-600 w-full md:w-auto text-white font-bold py-3 px-6 rounded-lg transition-colors text-base lg:text-lg flex-shrink-0">
+                            CHECK PRICE
+                        </button>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

@@ -27,7 +27,7 @@ function MobileSearchInput({ onClose }: { onClose: () => void }) {
                 placeholder="Search for any product or brand"
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
-                className={`w-full h-10 pl-12 pr-4 text-base bg-white rounded-[4px] border border-[#0E033B] text-[#0E033B] placeholder:text-[#0E033B] focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:ring-offset-0 ${searchValue && filteredSuggestions.length > 0 && 'rounded-b-none'}`}
+                className={`w-full h-10 pl-12 pr-4 text-base bg-white rounded-[4px] border border-[#0E033B] text-[#0E033B] placeholder:text-[#0E033B] focus:outline-none focus:ring-0 ${searchValue && filteredSuggestions.length > 0 && 'rounded-b-none'}`}
                 autoFocus
             />
 
@@ -83,9 +83,9 @@ export default function Header() {
 
     return (
         <>
-            <header className="px-4 border-b border-gray-300">
+            <header className="px-4">
                 {/* Desktop Layout - Always visible on desktop */}
-                <div className="md:max-w-[1312px] hidden lg:flex items-center justify-between m-auto h-20 bg-white z-50">
+                <div className="md:max-w-[1312px] hidden lg:flex items-center justify-between m-auto h-[60px] bg-white z-50">
                     <div className="flex items-center">
                         <Link href="/">
                             <img src="./logo_black.png" alt="Rated" className="w-[75px] md:w-[112px]" />
@@ -105,7 +105,7 @@ export default function Header() {
 
                         {/* Desktop Search Bar - Expanded state */}
                         {isSearchOpen && (
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-1">
                                 <div className="relative w-[350px] xl:w-[600px]">
                                     <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#0E033B]" />
                                     <input
@@ -113,7 +113,7 @@ export default function Header() {
                                         placeholder="Search for any product or brand"
                                         value={searchValue}
                                         onChange={(e) => handleSearchChange(e.target.value)}
-                                        className={`w-full h-10 pl-12 pr-4 text-lg bg-white rounded-[4px] border border-[#0E033B] text-[#0E033B] placeholder:text-[#0E033B] focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:ring-offset-0 ${isSearchOpen && searchValue && filteredSuggestions.length > 0 && 'rounded-b-none'}`}
+                                        className={`focus:outline-none focus:ring-0 w-full h-10 pl-12 pr-4 text-lg bg-white rounded-[4px] border border-[#0E033B] text-[#0E033B] placeholder:text-[#0E033B] focus:outline-none focus:ring-0 ${isSearchOpen && searchValue && filteredSuggestions.length > 0 && 'rounded-b-none'}`}
                                         autoFocus={isSearchOpen}
                                     />
 
@@ -155,7 +155,7 @@ export default function Header() {
                 {/* Mobile Layout */}
                 <div className="md:max-w-[1312px] block lg:hidden m-auto bg-white z-50">
                     {!isMobileSearchOpen ? (
-                        <div className="h-20 flex items-center justify-between">
+                        <div className="h-[56px] flex items-center justify-between">
                             <div className="flex items-center">
                                 <Link href="/">
                                     <img src="./logo_black.png" alt="Rated" className="w-[75px] md:w-[112px]" />
@@ -166,7 +166,7 @@ export default function Header() {
                                 {/* Mobile Search Icon */}
                                 <button
                                     onClick={() => setIsMobileSearchOpen(true)}
-                                    className="h-10 w-10 p-0 flex items-center justify-center text-[#0E033B] hover:bg-gray-300 rounded transition-colors"
+                                    className="h-6 w-6 p-0 flex items-center justify-center text-[#0E033B] hover:bg-gray-300 rounded transition-colors"
                                 >
                                     <Search className="w-5 h-5 stroke-[1.5]" />
                                 </button>
@@ -179,7 +179,7 @@ export default function Header() {
                     ) : (
                         <>
                             {/* First Row: Logo and Close Button + All Categories - Same height as closed state */}
-                            <div className="h-20 flex items-center justify-between">
+                            <div className="h-[56px] flex items-center justify-between">
                                 <div className="flex items-center">
                                     <Link href="/">
                                         <img src="./logo_black.png" alt="Rated" className="w-[75px] md:w-[112px]" />
@@ -189,7 +189,7 @@ export default function Header() {
                                 <div className="flex items-center gap-2">
                                     <button
                                         onClick={() => setIsMobileSearchOpen(false)}
-                                        className="h-10 w-10 p-0 rounded-[4px] bg-[#0E033B] text-white hover:bg-[#0a0230] transition-colors duration-200 flex items-center justify-center flex-shrink-0"
+                                        className="h-6 w-6 p-0 rounded-[4px] bg-[#0E033B] text-white hover:bg-[#0a0230] transition-colors duration-200 flex items-center justify-center flex-shrink-0"
                                     >
                                         <X className="w-5 h-5" />
                                     </button>
@@ -200,7 +200,7 @@ export default function Header() {
                             </div>
 
                             {/* Second Row: Mobile Search Bar */}
-                            <div className="pb-4 w-full">
+                            <div className="w-full">
                                 <MobileSearchInput onClose={() => setIsMobileSearchOpen(false)} />
                             </div>
                         </>

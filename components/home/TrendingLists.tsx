@@ -101,7 +101,7 @@ export default function TrendingLists() {
                                 <img
                                     src={item.image}
                                     alt={item.name}
-                                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-150"
+                                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
                                 />
                             </div>
 
@@ -157,7 +157,7 @@ export default function TrendingLists() {
                                             <img
                                                 src={item.image}
                                                 alt={item.name}
-                                                className="w-full h-full object-contain transition-transform duration-300 hover:scale-150"
+                                                className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
                                             />
                                         </div>
 

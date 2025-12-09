@@ -9,7 +9,7 @@ export default function LeafBuyerIQ() {
             }}
         >
 
-            <div className="max-w-[1440px] relative z-10 mx-auto">
+            <div className="max-w-[1312px] relative z-10 mx-auto overflow-hidden">
                 <div className="py-8 flex flex-col md:py-0 md:flex-row items-center md:h-[398px] md:justify-between">
                     {/* Desktop Image - positioned absolutely, hand coming from left */}
                     <div className="overflow-hidden hidden md:block relative w-[588px] h-[400px] flex-none order-0 ml-[-25px]">
@@ -39,11 +39,11 @@ export default function LeafBuyerIQ() {
                         <div className="max-w-xl py-8">
                             <div className="flex justify-center">
 
-                            <h4 className="inline-flex text-4xl font-bold w-[144px] bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-3">
+                            <h4 className="inline-flex text-[32px] md:text-[36px] leading-[38px] md:leading-[43px] font-bold w-[144px] bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-2">
                                 Buyer IQ
                             </h4>
                             </div>
-                            <h2 className="mb-6 font-bold text-gray-900 text-[48px] md:text-[48px] leading-[38px] md:leading-[58px] text-center">The Science of<br />Smart Shopping</h2>
+                            <h2 className="mb-6 font-bold text-[32px] lg:text-[48px] text-center leading-[38px] md:leading-[58px] tracking-[0.02em]">The Science of<br />Smart Shopping</h2>
                             <div className="flex justify-center">
                                 <div className="h-12 p-[2px] rounded-lg bg-gradient-to-r from-[#3D00A6] via-[#E500FF] to-[#080078] w-[170px]">
                                     <button

@@ -55,7 +55,7 @@ export default function MainHero() {
         <>
             <section className="relative flex w-full justify-center bg-[#06012D] px-4 py-16 md:px-0">
                 <div className="flex w-full max-w-[1440px] flex-col items-center gap-8">
-                    <div className="isolate flex w-full max-w-[343px] flex-col items-center justify-center gap-8 md:max-w-[1120px]">
+                    <div className="isolate flex w-full max-w-[343px] flex-col items-center justify-center gap-6 md:max-w-[1120px]">
                         <p className="font-hurme flex w-full items-center justify-center text-center text-[48px] font-semibold leading-[58px] text-white capitalize md:text-[68px] md:leading-[76px] md:tracking-[0.02em]">
                             Meet Rated
                         </p>
@@ -78,7 +78,7 @@ export default function MainHero() {
 
                         <div className="relative hidden h-[518px] w-full max-w-[1312px] rounded-2xl  md:block ">
                             <div className="absolute inset-0 rounded-2xl" aria-hidden />
-                            <div className="z-0 group absolute right-[89px] top-[calc(50%_-_265px_-_6px)] h-[530px] w-[530px]">
+                            <div className="z-[10] group absolute right-[89px] top-[calc(50%_-_265px_-_6px)] h-[530px] w-[530px]">
                                 <div
                                     ref={astronautParallaxRef}
                                     className="parallax-motion pointer-events-none absolute z-30"

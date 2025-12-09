@@ -10,13 +10,11 @@
 
 @font-face {
   font-family: 'Hurme Geometric Sans 1';
-  src: url('/fonts/HurmeGeometricSans1-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
+  src: url('/fonts/HurmeGeometricSans1.otf') format('opentype');
 }
 
 body *{
-    font-family: "Hurme Geometric Sans 1", sans-serif;
+    font-family: "Hurme Geometric Sans 1";
 }
 
 @tailwind base;
@@ -25,7 +23,7 @@ body *{
 
 
 .font-hurme {
-    font-family: "Hurme Geometric Sans 1", sans-serif;
+    font-family: "Hurme Geometric Sans 1";
 }
 
 .font-noto {

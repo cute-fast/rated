@@ -25,12 +25,12 @@ export default function LeafProduct({ product }) {
     return (
         <>
             <div className={`bg-white rounded-xl border bg-gray-100 hover:shadow-md transition-shadow ${showBuyerIQ ? 'overflow-visible' : 'overflow-hidden'} relative`}>
-                <div className="relative w-[136px] h-[24.13px]">
+                <div className="relative w-[136px] h-[24px]">
                     {/* Number section (product.rank) */}
                     {product.rank && (
                         <>
-                            <div className="absolute left-0 top-0 w-[29px] h-[24.13px] bg-[#06012D] flex items-center justify-center">
-                                <span 
+                            <div className="absolute left-0 top-0 w-[25px] h-[24px] bg-[#06012D] rounded-tl-xl flex items-center justify-center">
+                                <span
                                     className="font-hurme text-white text-[15px] font-bold text-edge-cap"
                                     style={{ lineHeight: '23px' }}
                                 >
@@ -38,32 +38,31 @@ export default function LeafProduct({ product }) {
                                 </span>
                             </div>
                             {/* Triangular edge pointing right */}
-                            <div 
-                                className="absolute left-[29px] top-0 w-[6.5px] h-[24.13px] bg-[#06012D]"
-                                style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
-                            ></div>
+                            <div className="absolute left-[21px] top-0 w-[11px] h-[24px] bg-[#06012D]"
+                                style={{clipPath: "polygon(0 0, 100% 0, 40% 100%, 0 100%)" }}>
+                            </div>
                         </>
                     )}
-                    
+
                     {/* Badge section (product.badge) - starts with gap/slit after rank */}
                     {product.badge && (
                         <>
                             {/* Gap/slit visible here - badge starts after the gap */}
                             {/* Triangular edge pointing left on badge */}
-                            <div 
-                                className="absolute left-[33px] top-0 w-[6px] h-[24.13px] bg-[#16CA92]"
-                                style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }}
+                            <div
+                                className="absolute left-[29px] top-0 w-[10px] h-[24px] bg-[#16CA92]"
+                                style={{clipPath: "polygon(60% 0, 100% 0, 100% 100%, 0 100%)" }}
                             ></div>
-                            <div 
-                                className="absolute left-[39px] top-0 w-[92px] h-[24.13px] bg-[#16CA92] flex items-center justify-center"
-                                style={{ 
+                            <div
+                                className="absolute left-[37px] top-0 w-[92px] h-[24px] bg-[#16CA92] flex items-center justify-center"
+                                style={{
                                     transform: 'rotate(180deg)',
                                     borderRadius: '8px 0 0 0'
                                 }}
                             >
-                                <span 
+                                <span
                                     className="font-hurme text-white text-[13px] font-bold text-edge-cap"
-                                    style={{ 
+                                    style={{
                                         lineHeight: '16px',
                                         transform: 'rotate(180deg)',
                                         letterSpacing: '0.1em'
@@ -76,7 +75,7 @@ export default function LeafProduct({ product }) {
                     )}
                 </div>
 
-                <div className="px-4 pt-2 pb-3 flex flex-col md:flex-row items-center">
+                <div className="px-4 pt-[4px] pb-3 flex flex-col md:flex-row items-center">
                     {/* Mobile: Image first, centered */}
                     <div className="w-full flex justify-center mb-4 md:w-auto md:mb-0 order-1 md:order-1 md:mr-4">
                         <img src={`/images/${product.image}`} alt="Product" className="w-full max-w-[300px] h-auto md:w-[120px] md:h-[120px] object-contain" />
@@ -92,7 +91,7 @@ export default function LeafProduct({ product }) {
 
                             <div className="flex flex-col md:flex-row md:mt-0">
                                 <Star rating={product.rating} />
-                                
+
                                 {/* Mobile: Buyer IQ score button below stars */}
                                 <div className="mt-2 md:hidden" ref={mobileDropdownRef}>
                                     <button
@@ -106,7 +105,7 @@ export default function LeafProduct({ product }) {
                         </div>
 
                         {/* Desktop: Buyer IQ score below everything */}
-                        <div className="relative mt-2 hidden md:block">
+                        <div className="relative hidden md:block">
                             <button
                                 className="flex items-center justify-center gap-1 text-gray-700 font-medium text-sm w-full"
                                 onMouseEnter={() => setShowBuyerIQ(true)}
@@ -326,7 +325,7 @@ export default function LeafProduct({ product }) {
 
                     {/* Mobile: Product info after rating, Desktop: after image */}
                     <div className="mb-6 w-full md:mb-0 md:w-[395px] md:flex-1 order-4 md:order-2 md:mr-20">
-                        <h3 className="font-bold text-lg lg:text-[15px] text-gray-900 mb-4 md:text-left md:tracking-[0.03em]">
+                        <h3 className="font-bold text-lg lg:text-[15px] text-gray-900 mb-[8px] md:text-left md:tracking-[0.03em]">
                             {product.name}
                         </h3>
 

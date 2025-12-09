@@ -9,14 +9,14 @@ export default function Feature() {
         <div className="py-8 flex flex-col-reverse md:py-0  md:flex-row items-center">
           {/* Left Content */}
           <div className="md:flex-1 flex justify-center">
-            <div className="max-w-[600px] py-8">
+            <div className="max-w-[600px] pt-8 pb-0 md:pb-8">
               <div className="flex items-center justify-center">
-                <h4 className="inline-flex text-4xl font-bold w-[144px] bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-3">
+                <h4 className="inline-flex text-[36px] leading-[43px] font-bold bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-1">
                   Buyer IQ
                 </h4>
               </div>
 
-              <h2 className="mb-6 font-bold text-5xl lg:text-[48px] text-center leading-[58px] tracking-[0.02em]">The Science of Smart Shopping</h2>
+              <h2 className="mb-6 font-bold text-[32px] lg:text-[48px] text-center leading-[38px] md:leading-[58px] tracking-[0.02em]">The Science of<br /> Smart Shopping</h2>
               <p className="hidden md:block mb-8 text-sm leading-relaxed text-center">
                 Behind every score is Buyer IQ - an engine that explores millions of data points from trusted
                 sources to reveal the top-rated products - powered by real buyer feedback, not lab tests.
@@ -43,11 +43,11 @@ export default function Feature() {
               className="hidden md:block max-h-[532px]"
             />
           </div>
-          <div className="md:hidden relative w-full">
+          <div className="md:hidden relative h-[324px] w-full overflow-visible">
             <img
               src="/hand_phone_mobile.png"
               alt="Hand holding phone showing app performance"
-              className="md:hidden w-full max-h-[450px] "
+              className="absolute top-[-50px] left-[calc(-35%+((100vw-390px)*0.4))] md:hidden w-[640px] rotate-[5deg] max-w-none"
             />
           </div>
 

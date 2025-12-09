@@ -16,7 +16,7 @@ export default function Newsletter() {
   }
 
   return (
-    <section className="relative overflow-hidden py-20 bg-[linear-gradient(180deg,_#110145_2%,_rgba(17,1,69,0.2)_60%,_#110145_100%)]">
+    <section className="relative overflow-hidden py-16 bg-[linear-gradient(180deg,_#110145_2%,_rgba(17,1,69,0.2)_60%,_#110145_100%)]">
       {/* Starry background effect */}
       <div className="absolute inset-0 -z-10">
         <img
@@ -38,13 +38,13 @@ export default function Newsletter() {
         </p>
 
         <form onSubmit={handleSubmit} className="mx-auto max-w-2xl">
-          <div className="flex flex-col gap-4 md:gap-0 sm:flex-row">
+          <div className="flex flex-col gap-1 md:gap-0 sm:flex-row">
             <input
               type="email"
               placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="h-12 md:flex-1 rounded-lg md:rounded-r-none border-0 bg-white px-4 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none"
+              className="h-12 sm:flex-1 rounded-lg md:rounded-r-none border-0 bg-white px-4 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none"
               required
             />
             <div className="h-12 p-[2px] rounded-lg md:rounded-l-none bg-gradient-to-r from-[#3D00A6] via-[#E500FF] to-[#080078]">
@@ -84,7 +84,7 @@ export default function Newsletter() {
                 )}
               </div>
 
-              <span className="text-[#ABBDFF] ml-2 text-sm text-white/80">
+              <span className="text-[#ABBDFF] ml-2 text-[11px]">
                 I agree to the{" "}
                 <a href="#" className="underline hover:text-white">Terms of Use</a> and{" "}
                 <a href="#" className="underline hover:text-white">Privacy Policy</a>.

@@ -43,9 +43,20 @@ export default function DisclosureBanner() {
 
   return (
     <>
-      <div className="bg-[#0E033B] text-white py-3 px-4 text-center text-sm">
+      <div className="hidden md:block bg-[#0E033B] text-white py-3 px-4 text-center text-sm">
         <p>
           When you buy through our links, we may earn a commission.{" "}
+          <button
+            onClick={handleDisclosureClick}
+            className="underline hover:opacity-80 transition-opacity cursor-pointer"
+          >
+            Ad Disclosure
+          </button>
+        </p>
+      </div>
+      <div className="md:hidden bg-[#0E033B] text-white py-3 px-4 text-center text-sm">
+        <div className="h-[16px]"></div>
+        <p>
           <button
             onClick={handleDisclosureClick}
             className="underline hover:opacity-80 transition-opacity cursor-pointer"

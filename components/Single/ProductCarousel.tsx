@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState, useRef, useEffect } from 'react';
 
 export default function ProductCarousel({ products = [] }) {
@@ -23,6 +23,12 @@ export default function ProductCarousel({ products = [] }) {
         },
         {
             name: "LG 27GS50F-B 27-inch FHD (1920 x 1080) Ultragear Gaming Monitor with 180Hz...",
+            image: "/images/product (1).png",
+            rating: 5,
+            reviews: 169
+        },
+        {
+            name: "acer Nitro 27 Inch WQHD 2560 x 1440 IPS Gaming Monitor | AMD FreeSync...",
             image: "/images/product (1).png",
             rating: 5,
             reviews: 169
@@ -97,7 +103,7 @@ export default function ProductCarousel({ products = [] }) {
 
     return (
         <section className='px-4'>
-            <div className="max-w-[1307px] mx-auto py-8">
+            <div className="max-w-[1280px] mx-auto py-8">
                 <div className="text-center mb-12">
                     <p className="text-lg leading-[18px] uppercase color-[#06012D] tracking-wider">TOP RATED</p>
                     <h2 className="text-[32px] md:font-semibold text-[48px] leading-[58px] tracking-[0.02em]">Similar Products</h2>
@@ -114,7 +120,7 @@ export default function ProductCarousel({ products = [] }) {
                             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all duration-200 border border-gray-200"
                             aria-label="Previous products"
                         >
-                            <ChevronLeft className="w-5 h-5 text-gray-700" />
+                            <ArrowLeft className="w-6 h-5 text-black" />
                         </button>
                     )}
 
@@ -124,7 +130,7 @@ export default function ProductCarousel({ products = [] }) {
                             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all duration-200 border border-gray-200"
                             aria-label="Next products"
                         >
-                            <ChevronRight className="w-5 h-5 text-gray-700" />
+                            <ArrowRight className="w-5 h-5 text-black" />
                         </button>
                     )}
 
@@ -139,11 +145,11 @@ export default function ProductCarousel({ products = [] }) {
                             {mockProducts.map((product, index) => (
                                 <div
                                     key={index}
-                                    className="flex-shrink-0 bg-white rounded-lg p-4"
+                                    className="flex-shrink-0 bg-white rounded-lg p-[4px]"
                                     style={{ width: `${cardWidth}px` }}
                                 >
                                     {/* Product Image */}
-                                    <div className="w-full h-[200px] mb-4 flex items-center justify-center">
+                                    <div className="w-full h-[300px] mb-4 flex items-center justify-center">
                                         <img
                                             src={product.image || '/images/placeholder.png'}
                                             alt={product.name}
@@ -152,7 +158,7 @@ export default function ProductCarousel({ products = [] }) {
                                     </div>
 
                                     {/* Product Title */}
-                                    <h4 className="font-semibold text-sm text-gray-900 mb-3 line-clamp-2 min-h-[40px] text-center">
+                                    <h4 className="font-bold text-[15px] text-gray-900 mb-3 line-clamp-2 min-h-[40px] text-center">
                                         {product.name}
                                     </h4>
 
@@ -176,7 +182,7 @@ export default function ProductCarousel({ products = [] }) {
                                     </div>
 
                                     {/* CHECK PRICE Button */}
-                                    <button className="w-[124px] h-[32px] flex items-center justify-center mx-auto bg-[#16CA92] hover:bg-teal-600 text-white text-[14px] leading-5 font-bold py-2 rounded-lg transition-colors tracking-widest">
+                                    <button className="w-[124px] h-[32px] flex items-center justify-center mx-auto bg-[#16CA92] hover:bg-teal-600 text-white text-[14px] leading-5 font-semibold rounded-lg transition-colors tracking-widest">
                                         CHECK PRICE
                                     </button>
                                 </div>

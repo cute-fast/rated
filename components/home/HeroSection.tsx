@@ -60,7 +60,7 @@ export default function HeroSection() {
                     />
                     
                     <video
-                        className="md:hidden absolute bottom-0 w-[1312px] h-auto max-w-none left-[-40%] object-cover object-center"
+                        className="md:hidden absolute bottom-0 w-[1150px] bottom-[20px] h-auto max-w-none left-[calc(-92%+((100vw-390px)*1.5))] object-cover object-center"
                         src="./hero.mp4"
                         autoPlay
                         muted
@@ -75,7 +75,7 @@ export default function HeroSection() {
                 </div>
 
                 <div className="max-w-8xl mx-auto relative z-[10]">
-                    <div className="px-4 md:px-[106px] pt-[93px] pb-[48px] md:pb-[93px] gap-12 items-center">
+                    <div className="px-4 md:px-[106px] pt-[48px] md:pt-[93px] pb-[48px] md:pb-[93px] gap-12 items-center">
                         <div>
                             <h1 className="hidden md:block text-[48px] md:text-[68px] font-bold mb-4 leading-[76px] tracking-[0.02em]">
                                 Smart Shopping,

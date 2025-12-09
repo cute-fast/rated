@@ -65,9 +65,9 @@ const categories = [
 
 export default function CategoryList() {
     return (
-        <section className="px-4 py-16">
-            <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold">Categories</h2>
+        <section className="px-4 pt-8 pb-4 md:py-16">
+            <div className="text-center mb-[40px] md:mb-12">
+                <h2 className="text-[32px] md:text-[48px] leading-[38px] md:leading-[58px] font-bold">Categories</h2>
             </div>
             <div className="max-w-[1204px] mx-auto">
                 {/* Mobile Layout - 2 column grid matching reference image */}

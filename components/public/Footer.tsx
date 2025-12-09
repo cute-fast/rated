@@ -6,13 +6,13 @@ export default function FooterSection() {
 
 
   return (
-    <footer className="bg-[#0E033B] text-white px-4 py-12">
+    <footer className="relative bg-[#110145] text-white px-4 py-8 md:pt-0">
       <div className="max-w-[1312px] mx-auto">
-        <div className="flex flex-col md:grid md:grid-cols-[1fr_2fr_1fr_1fr_1fr] gap-8 md:gap-12 mb-12">
+        <div className="flex flex-col md:grid md:grid-cols-[1fr_2fr_1fr_1fr_1fr] gap-8 md:gap-12 mb-8 md:mb-12">
           {/* Logo and Description - centered on mobile */}
           <div className="md:col-span-1 md:text-left flex items-center">
             <a href="/">
-              <img src="./logo_white.png" alt="Rated" className="w-[75px] md:w-[112px]" />
+              <img src="./logo_white.png" alt="Rated" className="w-[112px]" />
             </a>
 
           </div>
@@ -122,7 +122,7 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+        <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-sm">
           <div className="flex flex-row md:flex-row items-center gap-3 md:gap-6 text-gray-300 text-center">
             <a href="#" className="hover:text-white transition-colors">
               Terms of Use

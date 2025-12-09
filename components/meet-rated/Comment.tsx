@@ -93,8 +93,8 @@ export default function Comment() {
 
     return (
         <>
-            <section className="relative z-0 flex w-full justify-center  bg-[linear-gradient(180deg,#d7d7f5_0%,#f5f7ff_32.11%)]">
-                <div className="relative flex w-full max-w-[1312px] flex-col items-center gap-[13px] px-4 pt-12 pb-8 md:h-[796px] md:gap-8 md:pt-[64px] md:pb-[32px]">
+            <section className="relative flex w-full justify-center  bg-[linear-gradient(180deg,#d7d7f5_0%,#f5f7ff_32.11%)]">
+                <div className="z-[100] relative flex w-full max-w-[1312px] flex-col items-center gap-[13px] px-4 pt-12 pb-8 md:h-[796px] md:gap-8 md:pt-[64px] md:pb-[32px]">
                     <div
                         className="font-hurme absolute z-20 hidden h-[294px] w-[600px] flex-col items-center justify-center gap-6 text-left text-[#06012D] md:flex"
                         style={{
@@ -104,10 +104,10 @@ export default function Comment() {
                         }}
                     >
                         <div className="flex flex-col justify-center items-start p-0 w-[471px] h-[41px]">
-                            <span className="text-[12px] uppercase tracking-[0.2em] text-[#06012D] font-normal leading-[29px]">Powered by</span>
+                            <span className="text-[12px] uppercase tracking-[0.2em] text-[#06012D] font-normal leading-[15px]">Powered by</span>
                             <span className="inline-flex h-6 w-[104px] bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent font-semibold text-[24px] leading-[24px] tracking-[0.02em]" >Buyer IQ</span>
                         </div>
-                        <h3 className="w-[471px] h-[68px] text-[36px] font-semibold leading-[43px] tracking-[0.02em] ">
+                        <h3 className="w-[471px] h-[68px] text-[36px] font-semibold leading-[43px] tracking-[0.01em] ">
                             The Trust Operating System For Commerce
                         </h3>
                         <p className="text-[15px] leading-[21px]">

@@ -44,7 +44,7 @@ export default function LeafFAQs() {
   };
 
   return (
-    <div className="py-16 px-6">
+    <div className="pb-16 pt-12 md:pt-[88px] px-6">
       <div className="max-w-[960px] mx-auto">
         <h2 className="text-[24px] h-[49px] font-bold bg-[#F4F7FF] items-center flex pl-5">FAQs</h2>
 
