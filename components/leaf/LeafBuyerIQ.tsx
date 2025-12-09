@@ -2,7 +2,7 @@
 
 export default function LeafBuyerIQ() {
     return (
-        <section 
+        <section
             className="relative overflow-hidden bg-[#FCFDFF]"
             style={{
                 background: 'radial-gradient(40.93% 58.91% at 21.22% 46.23%, rgba(18, 3, 172, 0.15) 0%, rgba(229, 236, 255, 0.15) 100%), #FCFDFF'
@@ -27,11 +27,11 @@ export default function LeafBuyerIQ() {
                         />
                     </div>
                     {/* Mobile Image */}
-                    <div className="md:hidden relative w-full">
+                    <div className="md:hidden relative h-[324px] w-full overflow-visible">
                         <img
                             src="/hand_phone_mobile.png"
                             alt="Hand holding phone showing app performance"
-                            className="w-full max-h-[450px] rounded-2xl"
+                            className="absolute top-[-50px] left-[calc(-35%+((100vw-390px)*0.4))] md:hidden w-[640px] rotate-[5deg] max-w-none"
                         />
                     </div>
 
@@ -39,9 +39,9 @@ export default function LeafBuyerIQ() {
                         <div className="max-w-xl py-8">
                             <div className="flex justify-center">
 
-                            <h4 className="inline-flex text-[32px] md:text-[36px] leading-[38px] md:leading-[43px] font-bold w-[144px] bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-2">
-                                Buyer IQ
-                            </h4>
+                                <h4 className="inline-flex text-[32px] md:text-[36px] leading-[38px] md:leading-[43px] font-bold bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-2">
+                                    Buyer IQ
+                                </h4>
                             </div>
                             <h2 className="mb-6 font-bold text-[32px] lg:text-[48px] text-center leading-[38px] md:leading-[58px] tracking-[0.02em]">The Science of<br />Smart Shopping</h2>
                             <div className="flex justify-center">

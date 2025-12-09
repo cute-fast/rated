@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/single": "pages/single.js",
-  "/": "pages/index.js"
+  "/leaf": "pages/leaf.js",
+  "/": "pages/index.js",
+  "/category": "pages/category.js"
 }
