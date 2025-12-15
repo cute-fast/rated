@@ -8,7 +8,7 @@ export default function AdminTopbar() {
   const router = useRouter();
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/admin/me', {
+    axios.get('https://api.rated.xyz/api/admin/me', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
       .then(res => setAdmin(res.data))
