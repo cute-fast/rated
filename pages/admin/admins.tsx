@@ -16,7 +16,7 @@ export default function AdminManager() {
     setLoading(true);
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get('https://34.205.64.185:8000/api/admin/admins', {
+      const res = await axios.get('https://api.rated.xyz/api/admin/admins', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

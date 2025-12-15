@@ -20,7 +20,7 @@ export default function ExcelManager() {
       formData.append('file', file);
       try {
         const token = localStorage.getItem("token");
-        await axios.post(`https://34.205.64.185:8000/api/admin/excel/${type}/import`, formData, {
+        await axios.post(`https://api.rated.xyz/api/admin/excel/${type}/import`, formData, {
           headers: { 
             Authorization: `Bearer ${token}`,
             'Content-Type': 'multipart/form-data' 
@@ -40,7 +40,7 @@ export default function ExcelManager() {
     setFeedback(null);
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get(`https://34.205.64.185:8000/api/admin/excel/${type}/export`, { 
+      const res = await axios.get(`https://api.rated.xyz/api/admin/excel/${type}/export`, { 
         responseType: 'blob',
         headers: {
           Authorization: `Bearer ${token}`,

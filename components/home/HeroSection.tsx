@@ -35,11 +35,11 @@ export default function HeroSection() {
         setLoadingSuggestions(true)
         try {
             const [prodRes, catRes] = await Promise.all([
-                axios.get('https://34.205.64.185:8000/api/search/products', { params: { q: heroSearchValue, size: 5 } }).catch((err) => {
+                axios.get('https://api.rated.xyz/api/search/products', { params: { q: heroSearchValue, size: 5 } }).catch((err) => {
                     console.error('Products search error:', err)
                     return { data: [] }
                 }),
-                axios.get('https://34.205.64.185:8000/api/search/categories', { params: { q: heroSearchValue, size: 5 } }).catch((err) => {
+                axios.get('https://api.rated.xyz/api/search/categories', { params: { q: heroSearchValue, size: 5 } }).catch((err) => {
                     console.error('Categories search error:', err)
                     return { data: [] }
                 })

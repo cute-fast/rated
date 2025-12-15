@@ -34,7 +34,7 @@ export default function LeafCategoryPage() {
   const fetchLeaf = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`https://34.205.64.185:8000/api/${leafslug}`);
+      const res = await axios.get(`https://api.rated.xyz/api/${leafslug}`);
       console.log(res.data);
       setData(res.data);
       setNotFound(false);
