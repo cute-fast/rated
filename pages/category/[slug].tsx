@@ -26,7 +26,7 @@ export default function CategoryLevel1() {
   const fetchCategories = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`http://34.205.64.185:8000/api/category/${slug}`);
+      const res = await axios.get(`https://34.205.64.185:8000/api/category/${slug}`);
       setCategories(res.data);
       setNotFound(false);
     } catch (error) {

@@ -13,7 +13,7 @@ export default function AdminLogin() {
     setError('');
     try {
       const res = await axios.post(
-        'http://34.205.64.185:8000/api/admin/login',
+        'https://34.205.64.185:8000/api/admin/login',
         { email, password },
         {
           headers: {

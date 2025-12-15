@@ -16,7 +16,7 @@ export default function CategoryManager() {
   const fetchCategories = async () => {
     setLoading(true);
     const token = localStorage.getItem('token');
-    const res = await axios.get('http://34.205.64.185:8000/api/admin/categories/', {
+    const res = await axios.get('https://34.205.64.185:8000/api/admin/categories/', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

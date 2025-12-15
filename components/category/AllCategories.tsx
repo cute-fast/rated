@@ -180,7 +180,7 @@ export default function AllCategories() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('http://34.205.64.185:8000/api/home')
+      const res = await axios.get('https://34.205.64.185:8000/api/home')
       const categoriesData: Category[] = res.data
       
       // Transform backend data to include UI assets

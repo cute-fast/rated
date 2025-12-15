@@ -34,7 +34,7 @@ export default function ProductPage() {
   const fetchProduct = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`http://34.205.64.185:8000/api/product/${slug}`);
+      const res = await axios.get(`https://34.205.64.185:8000/api/product/${slug}`);
       const productData = {
         name: res.data.name,
         image: res.data.image_1,

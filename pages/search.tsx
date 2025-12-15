@@ -30,8 +30,8 @@ export default function SearchPage() {
     // Autocomplete (products + categories)
 
     const [prodRes, catRes] = await Promise.all([
-      axios.get('http://34.205.64.185:8000/api/search/products', { params: { q, size: 10 } }).catch(() => ({ data: [] })),
-      axios.get('http://34.205.64.185:8000/api/search/categories', { params: { q, size: 10 } }).catch(() => ({ data: [] })),
+      axios.get('https://34.205.64.185:8000/api/search/products', { params: { q, size: 10 } }).catch(() => ({ data: [] })),
+      axios.get('https://34.205.64.185:8000/api/search/categories', { params: { q, size: 10 } }).catch(() => ({ data: [] })),
     ]);
     setSuggestions([
       ...prodRes.data.map((p: any) => ({ type: 'product', ...p })),
@@ -49,8 +49,8 @@ export default function SearchPage() {
     setLoading(true);
     try {
       const [prodRes, catRes] = await Promise.all([
-        axios.get('http://34.205.64.185:8000/api/search/products', { params: { q: searchQuery, size: 20 } }).catch(() => ({ data: [] })),
-        axios.get('http://34.205.64.185:8000/api/search/categories', { params: { q: searchQuery, size: 20 } }).catch(() => ({ data: [] })),
+        axios.get('https://34.205.64.185:8000/api/search/products', { params: { q: searchQuery, size: 20 } }).catch(() => ({ data: [] })),
+        axios.get('https://34.205.64.185:8000/api/search/categories', { params: { q: searchQuery, size: 20 } }).catch(() => ({ data: [] })),
       ]);
       setResults({ products: prodRes.data || [], categories: catRes.data || [] });
     } catch (error) {

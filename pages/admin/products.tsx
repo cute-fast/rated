@@ -17,7 +17,7 @@ export default function ProductManager() {
   const fetchProducts = async (q: string, pageNum = 1) => {
     setLoading(true);
     try {
-      const res = await axios.get(`http://34.205.64.185:8000/api/search/products`, {
+      const res = await axios.get(`https://34.205.64.185:8000/api/search/products`, {
         params: { q, size: pageSize, from: (pageNum - 1) * pageSize },
       });
       setProducts(res.data);
@@ -55,14 +55,14 @@ export default function ProductManager() {
     try {
       const token = localStorage.getItem('token');
       if (modal?.type === 'add') {
-        await axios.post('http://34.205.64.185:8000/api/admin/products', values, {
+        await axios.post('https://34.205.64.185:8000/api/admin/products', values, {
           headers:{
             Authorization: `Bearer ${token}`
           }
         });
         setFeedback('Product added!');
       } else if (modal?.type === 'edit' && modal.product) {
-        await axios.patch(`http://34.205.64.185:8000/api/admin/products/${modal.product.asin}`, values, {
+        await axios.patch(`https://34.205.64.185:8000/api/admin/products/${modal.product.asin}`, values, {
           headers:{
             Authorization: `Bearer ${token}`
           }
@@ -80,7 +80,7 @@ export default function ProductManager() {
     if (!modal?.product) return;
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://34.205.64.185:8000/api/admin/products/${modal.product.asin}`, {
+      await axios.delete(`https://34.205.64.185:8000/api/admin/products/${modal.product.asin}`, {
         headers:{
           Authorization: `Bearer ${token}`
         }

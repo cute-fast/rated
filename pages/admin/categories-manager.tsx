@@ -196,7 +196,7 @@ export default function AdminCategoriesManager() {
   // Fetch top-level categories on mount
   useEffect(() => {
     setLoading(true);
-    axios.get('http://34.205.64.185:8000/api/admin/categories/', {
+    axios.get('https://34.205.64.185:8000/api/admin/categories/', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(res => {
@@ -216,7 +216,7 @@ export default function AdminCategoriesManager() {
   // Fetch children for a node
   const fetchChildren = async (parentId: string, level: number) => {
     setLoadingMap(prev => ({ ...prev, [parentId]: true }));
-    const res = await axios.get('http://34.205.64.185:8000/api/admin/categories/', {
+    const res = await axios.get('https://34.205.64.185:8000/api/admin/categories/', {
       params: { parent_slug: parentId },
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     });
@@ -267,7 +267,7 @@ export default function AdminCategoriesManager() {
 
   // Fetch all non-leaf categories for parent dropdown
   useEffect(() => {
-    axios.get('http://34.205.64.185:8000/api/admin/categories/non-leaf', {
+    axios.get('https://34.205.64.185:8000/api/admin/categories/non-leaf', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(res => setAllNonLeafCategories(res.data))
@@ -314,7 +314,7 @@ export default function AdminCategoriesManager() {
       return;
     }
     setSearching(true);
-    axios.get('http://34.205.64.185:8000/api/admin/categories/search', {
+    axios.get('https://34.205.64.185:8000/api/admin/categories/search', {
       params: { q: searchQuery },
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
@@ -397,14 +397,14 @@ export default function AdminCategoriesManager() {
     const descendants = getDescendantIdsLazy(draggedNode);
     if (descendants.includes(destNode.id)) return;
     setActionLoading(true);
-    await axios.patch(`http://34.205.64.185:8000/api/admin/categories/${draggedNode.id}`, {
+    await axios.patch(`https://34.205.64.185:8000/api/admin/categories/${draggedNode.id}`, {
       parent_slug: destNode.id,
     }, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     });
     // Refetch root and clear childrenMap for fresh state
     setLoading(true);
-    axios.get('http://34.205.64.185:8000/api/admin/categories/', {
+    axios.get('https://34.205.64.185:8000/api/admin/categories/', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(res => {
@@ -534,7 +534,7 @@ export default function AdminCategoriesManager() {
               return;
             }
             setEditSponsorSearchLoading(true);
-            const res = await axios.get('http://34.205.64.185:8000/api/search/products', { params: { q: value } });
+            const res = await axios.get('https://34.205.64.185:8000/api/search/products', { params: { q: value } });
             setEditSponsorSearchResults(res.data);
             setEditSponsorSearchLoading(false);
           }}
@@ -574,7 +574,7 @@ export default function AdminCategoriesManager() {
                 const asin = editSelectedSponsor?.asin || selectedDetails.sponsor_asin;
                 if (!asin) return;
                 const token = localStorage.getItem('token');
-                const res = await axios.get(`http://34.205.64.185:8000/api/admin/products/${asin}`, {
+                const res = await axios.get(`https://34.205.64.185:8000/api/admin/products/${asin}`, {
                   headers: { Authorization: `Bearer ${token}` }
                 });
                 setEditProductModalOpen(true);
@@ -609,7 +609,7 @@ export default function AdminCategoriesManager() {
               return;
             }
             setEditMainProductSearchLoading(true);
-            const res = await axios.get('http://34.205.64.185:8000/api/search/products', { params: { q: value } });
+            const res = await axios.get('https://34.205.64.185:8000/api/search/products', { params: { q: value } });
             setEditMainProductSearchResults(res.data);
             setEditMainProductSearchLoading(false);
           }}
@@ -668,7 +668,7 @@ export default function AdminCategoriesManager() {
                                 const asin = prod.asin;
                                 if (!asin) return;
                                 const token = localStorage.getItem('token');
-                                const res = await axios.get(`http://34.205.64.185:8000/api/admin/products/${asin}`, {
+                                const res = await axios.get(`https://34.205.64.185:8000/api/admin/products/${asin}`, {
                                   headers: { Authorization: `Bearer ${token}` }
                                 });
                                 setEditProductModalOpen(true);
@@ -705,7 +705,7 @@ export default function AdminCategoriesManager() {
   const handleSave = async () => {
     if (!selectedId) return;
     setActionLoading(true);
-    await axios.patch(`http://34.205.64.185:8000/api/admin/categories/${selectedId}`,
+    await axios.patch(`https://34.205.64.185:8000/api/admin/categories/${selectedId}`,
       {
         name: editName,
         parent_slug: editParent || null,
@@ -724,7 +724,7 @@ export default function AdminCategoriesManager() {
     );
     // Refresh root categories, but do NOT reset expanded or childrenMap
     setLoading(true);
-    axios.get('http://34.205.64.185:8000/api/admin/categories/', {
+    axios.get('https://34.205.64.185:8000/api/admin/categories/', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(res => {
@@ -750,14 +750,14 @@ export default function AdminCategoriesManager() {
   const handleDelete = async () => {
     if (!selectedId) return;
     setActionLoading(true);
-    await axios.delete(`http://34.205.64.185:8000/api/admin/categories/${selectedId}`, {
+    await axios.delete(`https://34.205.64.185:8000/api/admin/categories/${selectedId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     });
     setSelectedId(null);
     setSelectedDetails(null);
     // Refresh root and clear childrenMap for fresh state
     setLoading(true);
-    axios.get('http://34.205.64.185:8000/api/admin/categories/', {
+    axios.get('https://34.205.64.185:8000/api/admin/categories/', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(res => {
@@ -780,14 +780,14 @@ export default function AdminCategoriesManager() {
   const handleMove = async () => {
     if (!selectedId) return;
     setActionLoading(true);
-    await axios.patch(`http://34.205.64.185:8000/api/admin/categories/${selectedId}`, {
+    await axios.patch(`https://34.205.64.185:8000/api/admin/categories/${selectedId}`, {
       parent_slug: editParent || null,
     }, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     });
     // Refresh root and clear childrenMap for fresh state
     setLoading(true);
-    axios.get('http://34.205.64.185:8000/api/admin/categories/', {
+    axios.get('https://34.205.64.185:8000/api/admin/categories/', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(res => {
@@ -825,7 +825,7 @@ export default function AdminCategoriesManager() {
       product_asins: selectedProducts.map(p => p.asin),
     };
     console.log(new_cat);
-    await axios.post('http://34.205.64.185:8000/api/admin/categories/', new_cat, {
+    await axios.post('https://34.205.64.185:8000/api/admin/categories/', new_cat, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     });
     setShowAddModal(false);
@@ -847,7 +847,7 @@ export default function AdminCategoriesManager() {
     setAddLoading(false);
     // Refresh root and clear childrenMap for fresh state
     setLoading(true);
-    axios.get('http://34.205.64.185:8000/api/admin/categories/', {
+    axios.get('https://34.205.64.185:8000/api/admin/categories/', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(res => {
@@ -894,7 +894,7 @@ export default function AdminCategoriesManager() {
   useEffect(() => {
     if (!selectedId) return;
     setDetailsLoading(true);
-    axios.get(`http://34.205.64.185:8000/api/admin/categories/${selectedId}`, {
+    axios.get(`https://34.205.64.185:8000/api/admin/categories/${selectedId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(res => {
@@ -931,7 +931,7 @@ export default function AdminCategoriesManager() {
     setProductOrder(reordered);
     // Update backend order
     if (selectedId && selectedDetails && selectedDetails.is_leaf) {
-      await axios.patch(`http://34.205.64.185:8000/api/admin/categories/${selectedId}`, {
+      await axios.patch(`https://34.205.64.185:8000/api/admin/categories/${selectedId}`, {
         product_asins: reordered
       }, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -981,7 +981,7 @@ export default function AdminCategoriesManager() {
     // Fetch ancestor chain from backend
     let ancestors: any[] = [];
     try {
-      const res = await axios.get(`http://34.205.64.185:8000/api/admin/categories/${slug}/ancestors`, {
+      const res = await axios.get(`https://34.205.64.185:8000/api/admin/categories/${slug}/ancestors`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       ancestors = res.data;
@@ -1037,7 +1037,7 @@ export default function AdminCategoriesManager() {
       return;
     }
     setProductSearchLoading(true);
-    axios.get('http://34.205.64.185:8000/api/search/products', {
+    axios.get('https://34.205.64.185:8000/api/search/products', {
       params: { q: productSearch, size: 10 },
     })
       .then(res => {
@@ -1060,7 +1060,7 @@ export default function AdminCategoriesManager() {
       return;
     }
     setSponsorSearchLoading(true);
-    axios.get('http://34.205.64.185:8000/api/search/products', {
+    axios.get('https://34.205.64.185:8000/api/search/products', {
       params: { q: sponsorSearch, size: 10 },
     })
       .then(res => {
@@ -1466,7 +1466,7 @@ export default function AdminCategoriesManager() {
                               return;
                             }
                             setEditSponsorSearchLoading(true);
-                            const res = await axios.get('http://34.205.64.185:8000/api/search/products', { params: { q: value } });
+                            const res = await axios.get('https://34.205.64.185:8000/api/search/products', { params: { q: value } });
                             setEditSponsorSearchResults(res.data);
                             setEditSponsorSearchLoading(false);
                           }}
@@ -1512,7 +1512,7 @@ export default function AdminCategoriesManager() {
                               const asin = editSelectedSponsor?.asin || selectedDetails.sponsor_asin;
                               if (!asin) return;
                               const token = localStorage.getItem('token');
-                              const res = await axios.get(`http://34.205.64.185:8000/api/admin/products/${asin}`, {
+                              const res = await axios.get(`https://34.205.64.185:8000/api/admin/products/${asin}`, {
                                 headers: { Authorization: `Bearer ${token}` }
                               });
                               setEditProductModalOpen(true);
@@ -1549,7 +1549,7 @@ export default function AdminCategoriesManager() {
                               return;
                             }
                             setEditMainProductSearchLoading(true);
-                            const res = await axios.get('http://34.205.64.185:8000/api/search/products', { params: { q: value } });
+                            const res = await axios.get('https://34.205.64.185:8000/api/search/products', { params: { q: value } });
                             setEditMainProductSearchResults(res.data);
                             setEditMainProductSearchLoading(false);
                           }}
@@ -1614,7 +1614,7 @@ export default function AdminCategoriesManager() {
                                               const asin = prod.asin;
                                               if (!asin) return;
                                               const token = localStorage.getItem('token');
-                                              const res = await axios.get(`http://34.205.64.185:8000/api/admin/products/${asin}`, {
+                                              const res = await axios.get(`https://34.205.64.185:8000/api/admin/products/${asin}`, {
                                                 headers: { Authorization: `Bearer ${token}` }
                                               });
                                               setEditProductModalOpen(true);
@@ -1692,7 +1692,7 @@ export default function AdminCategoriesManager() {
                       } else {
                         // Fetch ancestors to build the full path
                         try {
-                          const res = await axios.get(`http://34.205.64.185:8000/api/admin/categories/${selectedDetails.slug}/ancestors`, {
+                          const res = await axios.get(`https://34.205.64.185:8000/api/admin/categories/${selectedDetails.slug}/ancestors`, {
                             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
                           });
                           const ancestors = res.data; // array of {slug, ...}
@@ -1745,7 +1745,7 @@ export default function AdminCategoriesManager() {
               setCreateProductError('');
               try {
                 const token = localStorage.getItem('token');
-                const res = await axios.post('http://34.205.64.185:8000/api/admin/products', values, {
+                const res = await axios.post('https://34.205.64.185:8000/api/admin/products', values, {
                   headers: { Authorization: `Bearer ${token}` }
                 });
                 if (createProductContext === 'sponsor') {
@@ -1768,7 +1768,7 @@ export default function AdminCategoriesManager() {
             onSubmit={async (values) => {
               try {
                 const token = localStorage.getItem('token');
-                await axios.patch(`http://34.205.64.185:8000/api/admin/products/${values.asin}`, values, {
+                await axios.patch(`https://34.205.64.185:8000/api/admin/products/${values.asin}`, values, {
                   headers: { Authorization: `Bearer ${token}` }
                 });
                 if (editProductContext === 'sponsor') {

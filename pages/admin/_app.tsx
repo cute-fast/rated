@@ -20,7 +20,7 @@ function AdminApp({ Component, pageProps }: any) {
         return;
       }
       try {
-        await axios.get('http://34.205.64.185:8000/api/admin/me', {
+        await axios.get('https://34.205.64.185:8000/api/admin/me', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setAuthChecked(true);
