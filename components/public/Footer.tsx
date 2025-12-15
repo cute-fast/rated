@@ -12,7 +12,7 @@ export default function FooterSection() {
           {/* Logo and Description - centered on mobile */}
           <div className="md:col-span-1 md:text-left flex items-center">
             <a href="/">
-              <img src="./logo_white.png" alt="Rated" className="w-[112px]" />
+              <img src="/logo_white.png" alt="Rated" className="w-[112px]" />
             </a>
 
           </div>
@@ -27,13 +27,15 @@ export default function FooterSection() {
               <h4 className="font-semibold text-base mb-4 text-center md:text-left">Follow Us</h4>
               <div className="flex md:grid md:grid-cols-2 md:w-[120px]">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/rated.xyz"
+                  target='blank'
                   className="border border-white/40 hover:border-white hover:bg-white/10 transition-all p-3 flex items-center justify-center w-12 h-12 md:aspect-square md:w-auto md:h-auto"
                 >
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/rated.xyz"
+                  target='blank'
                   className="border border-white/40 hover:border-white hover:bg-white/10 transition-all p-3 flex items-center justify-center w-12 h-12 md:aspect-square md:w-auto md:h-auto"
                 >
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -41,13 +43,15 @@ export default function FooterSection() {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/rated.xyz"
+                  target='blank'
                   className="border border-white/40 hover:border-white hover:bg-white/10 transition-all p-3 flex items-center justify-center w-12 h-12 md:aspect-square md:w-auto md:h-auto"
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/rated.xyz"
+                  target='blank'
                   className="border border-white/40 hover:border-white hover:bg-white/10 transition-all p-3 flex items-center justify-center w-12 h-12 md:aspect-square md:w-auto md:h-auto"
                 >
                   <Linkedin className="h-5 w-5" />
@@ -65,12 +69,12 @@ export default function FooterSection() {
                 <h4 className="font-semibold text-base mb-4">Company</h4>
                 <ul className="space-y-2.5 text-gray-300 text-sm">
                   <li>
-                    <a href="#" className="hover:text-white transition-colors">
+                    <a href="/about-us" className="hover:text-white transition-colors">
                       About
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-white transition-colors">
+                    <a href="/contact-us" className="hover:text-white transition-colors">
                       Contact Us
                     </a>
                   </li>
@@ -95,22 +99,22 @@ export default function FooterSection() {
                 <h4 className="font-semibold text-base mb-4">More</h4>
                 <ul className="space-y-2.5 text-gray-300 text-sm">
                   <li>
-                    <a href="#" className="hover:text-white transition-colors">
+                    <a href="/categories" className="hover:text-white transition-colors">
                       Categories
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-white transition-colors">
+                    <a href="/top-rated-lists" className="hover:text-white transition-colors">
                       Top Rated Lists
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-white transition-colors">
+                    <a href="/ratings" className="hover:text-white transition-colors">
                       Ratings
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-white transition-colors">
+                    <a href="/buyeriq" className="hover:text-white transition-colors">
                       BuyerIQ
                     </a>
                   </li>
@@ -124,16 +128,16 @@ export default function FooterSection() {
 
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-sm">
           <div className="flex flex-row md:flex-row items-center gap-3 md:gap-6 text-gray-300 text-center">
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="/terms-of-use" className="hover:text-white transition-colors">
               Terms of Use
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="/ccpa" className="hover:text-white transition-colors">
               CCPA
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="/cookie-policy" className="hover:text-white transition-colors">
               Cookie Policy
             </a>
           </div>

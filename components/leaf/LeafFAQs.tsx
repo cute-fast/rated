@@ -7,35 +7,19 @@ interface FAQItem {
   answer: string;
 }
 
-export default function LeafFAQs() {
+export default function LeafFAQs({ faqData }: { faqData: any[] }) {
 
-  const faqItems: FAQItem[] = [
-    {
-      id: 1,
-      question: "Can I change or cancel my order?",
-      answer: "Yes, you can change or cancel your order within 24 hours of purchase. After that period, the order enters processing and cannot be modified. Contact our support team for assistance."
-    },
-    {
-      id: 2,
-      question: "Can I change or cancel my order?",
-      answer: "Yes, you can change or cancel your order within 24 hours of purchase. After that period, the order enters processing and cannot be modified. Contact our support team for assistance."
-    },
-    {
-      id: 3,
-      question: "Can I change or cancel my order?",
-      answer: "Yes, you can change or cancel your order within 24 hours of purchase. After that period, the order enters processing and cannot be modified. Contact our support team for assistance."
-    },
-    {
-      id: 4,
-      question: "Can I change or cancel my order?",
-      answer: "Yes, you can change or cancel your order within 24 hours of purchase. After that period, the order enters processing and cannot be modified. Contact our support team for assistance."
-    },
-    {
-      id: 5,
-      question: "Can I change or cancel my order?",
-      answer: "Yes, you can change or cancel your order within 24 hours of purchase. After that period, the order enters processing and cannot be modified. Contact our support team for assistance."
+  // Process faqData array - pairs of [question, answer, question, answer, ...]
+  const faqItems: FAQItem[] = faqData.reduce((acc, item, index) => {
+    if (index % 2 === 0) {
+      acc.push({
+        id: acc.length + 1,
+        question: item,
+        answer: faqData[index + 1] || ""
+      });
     }
-  ];
+    return acc;
+  }, []);
 
   const [openId, setOpenId] = useState<number | null>(null);
 

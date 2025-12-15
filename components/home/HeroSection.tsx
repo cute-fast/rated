@@ -1,37 +1,66 @@
 "use client"
 import type React from "react"
-import { Search, ArrowRight } from "lucide-react"
-import { useState } from "react"
+import { Search } from "lucide-react"
+import { useState, useEffect } from "react"
+import { useRouter } from "next/router"
+import axios from "axios"
 import { useIsMobile } from "../../hooks/use-mobile"
 
 export default function HeroSection() {
     const [heroSearchValue, setHeroSearchValue] = useState("")
-    const [showHeroSuggestions, setShowHeroSuggestions] = useState(false)
-    // console.log("useIsMobile =", useIsMobile)
+    const [suggestions, setSuggestions] = useState<any[]>([])
+    const [loadingSuggestions, setLoadingSuggestions] = useState(false)
+    const router = useRouter()
     const isMobile = useIsMobile()
-    // console.log(isMobile);
 
-    const searchSuggestions = [
-        { name: "Specialized", type: "Brand" },
-        { name: "Special Effects", type: "in Fancy Dresses" },
-        { name: "PC Specialist", type: "Brand" },
-        { name: "Lens Filters Special Applications", type: "in Camera Lens Filters" },
-        { name: "Special Sparkle", type: "Brand" },
-        { name: "Special Essentials", type: "Brand" },
-        { name: "Special Ingredient", type: "Brand" },
-        { name: "Special Ingredients", type: "Brand" },
-        { name: "Special Kitty", type: "Brand" },
-        { name: "Special Lite", type: "Brand" },
-    ]
+    useEffect(() => {
+        if (heroSearchValue.length >= 2) {
+            const timeoutId = setTimeout(() => {
+                fetchSuggestions()
+            }, 300) // Debounce 300ms
 
-    const filteredSuggestions = searchSuggestions.filter((suggestion) =>
-        suggestion.name.toLowerCase().includes(heroSearchValue.toLowerCase()),
-    )
+            return () => clearTimeout(timeoutId)
+        } else {
+            setSuggestions([])
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [heroSearchValue])
+
+    const fetchSuggestions = async () => {
+        if (!heroSearchValue || heroSearchValue.length < 2) {
+            setSuggestions([])
+            return
+        }
+
+        setLoadingSuggestions(true)
+        try {
+            const [prodRes, catRes] = await Promise.all([
+                axios.get('http://34.205.64.185:8000/api/search/products', { params: { q: heroSearchValue, size: 5 } }).catch((err) => {
+                    console.error('Products search error:', err)
+                    return { data: [] }
+                }),
+                axios.get('http://34.205.64.185:8000/api/search/categories', { params: { q: heroSearchValue, size: 5 } }).catch((err) => {
+                    console.error('Categories search error:', err)
+                    return { data: [] }
+                })
+            ])
+
+            const combined = [
+                ...(prodRes.data || []).map((p: any) => ({ ...p, name: p.name, type: 'Product', displayText: p.name })),
+                ...(catRes.data || []).map((c: any) => ({ ...c, name: c.name, type: 'Category', displayText: c.name }))
+            ]
+            setSuggestions(combined.slice(0, 10))
+        } catch (error) {
+            console.error('Error fetching suggestions:', error)
+            setSuggestions([])
+        } finally {
+            setLoadingSuggestions(false)
+        }
+    }
 
     const handleHeroSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value
         setHeroSearchValue(value)
-        setShowHeroSuggestions(value.length > 0)
     }
 
     const handleHeroSearchFocus = () => {
@@ -40,9 +69,23 @@ export default function HeroSection() {
         }
     }
 
-    const handleHeroSuggestionClick = (suggestion: string) => {
-        setHeroSearchValue(suggestion)
-        setShowHeroSuggestions(false)
+    const handleHeroSearchSubmit = (e?: React.FormEvent) => {
+        e?.preventDefault()
+        if (heroSearchValue.trim()) {
+            router.push(`/search?q=${encodeURIComponent(heroSearchValue.trim())}`)
+            setHeroSearchValue("")
+            setSuggestions([])
+        }
+    }
+
+    const handleHeroSuggestionClick = (suggestion: any) => {
+        if (suggestion.type === 'Product') {
+            router.push(`/product/${suggestion.slug}`)
+        } else {
+            router.push(`/${suggestion.slug}`)
+        }
+        setHeroSearchValue("")
+        setSuggestions([])
     }
 
     return (
@@ -102,41 +145,50 @@ export default function HeroSection() {
                                 and millions of consumer insights
                             </p>
                             <div className="relative w-full md:max-w-[392px] z-[100]">
-                                <div className={`flex items-center bg-white border border-[#4450FF] rounded-[8px] overflow-hidden ${showHeroSuggestions && filteredSuggestions.length > 0 && !isMobile && ('rounded-b-none')}`}>
-
+                                <form onSubmit={handleHeroSearchSubmit} className={`flex items-center bg-white border border-[#4450FF] rounded-[8px] overflow-hidden ${heroSearchValue.length >= 2 && (loadingSuggestions || suggestions.length > 0) && !isMobile && ('rounded-b-none')}`}>
                                     <input
                                         value={heroSearchValue}
                                         onChange={handleHeroSearchChange}
                                         onFocus={handleHeroSearchFocus}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter') {
+                                                handleHeroSearchSubmit()
+                                            }
+                                        }}
                                         placeholder="Search"
                                         className="text-[15px] px-4 flex-1 border-0 bg-transparent text-black placeholder:text-gray-500 focus:outline-none text-base px-0 text-base"
                                     />
 
-                                    <div className="pl-4 pr-[15px] py-[14px]">
+                                    <button type="submit" className="pl-4 pr-[15px] py-[14px]">
                                         <Search className="h-[24px] w-[24px] text-black" />
-                                    </div>
+                                    </button>
+                                </form>
 
-                                </div>
-
-                                {showHeroSuggestions && filteredSuggestions.length > 0 && (
+                                {heroSearchValue.length >= 2 && (
                                     <div className="absolute top-full left-0 right-0 mt-0 bg-white rounded-b-lg shadow-lg border z-[100] max-h-120 overflow-y-auto">
-                                        {filteredSuggestions.map((suggestion, index) => (
-                                            <button
-                                                key={index}
-                                                onClick={() => handleHeroSuggestionClick(suggestion.name)}
-                                                className="w-full flex items-center gap-3 text-left hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
-                                            >
-                                                <div className="w-[56px] bg-gray-100 py-3 px-5 h-12">
-                                                    <Search className="h-4 w-4 text-black flex-shrink-0" />
-                                                </div>
+                                        {loadingSuggestions ? (
+                                            <div className="px-4 py-3 text-gray-500 text-sm">Loading...</div>
+                                        ) : suggestions.length > 0 ? (
+                                            suggestions.map((suggestion, index) => (
+                                                <button
+                                                    key={`${suggestion.type}-${suggestion.slug || suggestion.asin || index}`}
+                                                    type="button"
+                                                    onClick={() => handleHeroSuggestionClick(suggestion)}
+                                                    className="w-full flex items-center gap-3 text-left hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
+                                                >
+                                                    <div className="w-[56px] bg-gray-100 py-3 px-5 h-12">
+                                                        <Search className="h-4 w-4 text-black flex-shrink-0" />
+                                                    </div>
 
-                                                <div className="flex-1 text-black font-medium">
-                                                    {suggestion.name}
-                                                </div>
-                                                <div className="border-l text-center w-[150px] text-gray-500 text-sm ml-2 h-12 py-3">{suggestion.type}</div>
-
-                                            </button>
-                                        ))}
+                                                    <div className="flex-1 text-black font-medium">
+                                                        {suggestion.displayText || suggestion.name}
+                                                    </div>
+                                                    <div className="border-l text-center w-[150px] text-gray-500 text-sm ml-2 h-12 py-3">{suggestion.type}</div>
+                                                </button>
+                                            ))
+                                        ) : (
+                                            <div className="px-4 py-3 text-gray-500 text-sm">No results found</div>
+                                        )}
                                     </div>
                                 )}
                             </div>

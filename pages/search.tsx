@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function SearchPage() {
+  const router = useRouter();
+  const { q } = router.query;
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<any>({ products: [], categories: [] });
   const [loading, setLoading] = useState(false);
   const [suggestions, setSuggestions] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (q && typeof q === 'string') {
+      const decodedQuery = decodeURIComponent(q);
+      setQuery(decodedQuery);
+      performSearch(decodedQuery);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [q]);
 
   const handleInput = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const q = e.target.value;
@@ -18,8 +30,8 @@ export default function SearchPage() {
     // Autocomplete (products + categories)
 
     const [prodRes, catRes] = await Promise.all([
-      axios.get('http://localhost:8000/api/search/products', { params: { q, size: 10 } }),
-      axios.get('http://localhost:8000/api/search/categories', { params: { q, size: 10 } }),
+      axios.get('http://34.205.64.185:8000/api/search/products', { params: { q, size: 10 } }).catch(() => ({ data: [] })),
+      axios.get('http://34.205.64.185:8000/api/search/categories', { params: { q, size: 10 } }).catch(() => ({ data: [] })),
     ]);
     setSuggestions([
       ...prodRes.data.map((p: any) => ({ type: 'product', ...p })),
@@ -28,15 +40,33 @@ export default function SearchPage() {
     console.log(prodRes.data);
   };
 
+  const performSearch = async (searchQuery: string) => {
+    if (!searchQuery || searchQuery.trim().length === 0) {
+      setResults({ products: [], categories: [] });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const [prodRes, catRes] = await Promise.all([
+        axios.get('http://34.205.64.185:8000/api/search/products', { params: { q: searchQuery, size: 20 } }).catch(() => ({ data: [] })),
+        axios.get('http://34.205.64.185:8000/api/search/categories', { params: { q: searchQuery, size: 20 } }).catch(() => ({ data: [] })),
+      ]);
+      setResults({ products: prodRes.data || [], categories: catRes.data || [] });
+    } catch (error) {
+      console.error('Search error:', error);
+      setResults({ products: [], categories: [] });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    const [prodRes, catRes] = await Promise.all([
-      axios.get('http://localhost:8000/api/search/products', { params: { q: query, size: 10 } }),
-      axios.get('http://localhost:8000/api/search/categories', { params: { q: query, size: 10 } }),
-    ]);
-    setResults({ products: prodRes.data, categories: catRes.data });
-    setLoading(false);
+    if (query.trim()) {
+      router.push(`/search?q=${encodeURIComponent(query.trim())}`, undefined, { shallow: false });
+      performSearch(query.trim());
+    }
   };
 
   

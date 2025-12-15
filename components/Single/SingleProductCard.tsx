@@ -88,7 +88,7 @@ export default function SingleProductCard({ product }) {
                     </div>
                     {/* Product Accordion */}
                     <div className="py-8 hidden md:block w-full">
-                        <ProductAccordion noWrapper={true} />
+                        <ProductAccordion product={product} />
                     </div>
                 </div>
 
@@ -104,14 +104,14 @@ export default function SingleProductCard({ product }) {
                             {/* Score and stars on same row */}
                             <div className="flex items-center justify-center md:justify-start gap-3">
                                 <div className="text-5xl lg:text-[48px] font-bold text-gray-900 leading-none">
-                                    {(product.rating || product.score || 0).toFixed(1)}
+                                    {(product.score || 0).toFixed(1)}
                                 </div>
 
                                 <div className="flex flex-col">
                                     {/* Stars */}
                                     <div className="flex gap-1">
                                         {[...Array(5)].map((_, i) => {
-                                            const rating = product.rating || product.score || 0;
+                                            const rating = product.score || 0;
                                             const starValue = rating / 2;
                                             const filledStars = Math.floor(starValue);
                                             const partialFill = starValue - filledStars;
@@ -268,13 +268,13 @@ export default function SingleProductCard({ product }) {
                             {product.features && product.features.length > 0 ? (
                                 product.features.slice(0, 3).map((feature, index) => (
                                     <li key={index} className="flex items-center gap-3 text-sm lg:text-base text-gray-700">
-                                        <img src="icon-checker.png" alt="Check" className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                                        <img src="/icon-checker.png" alt="Check" className="w-4 h-4 flex-shrink-0 mt-0.5" />
                                         <span className='text-[13px] leading-none'>{feature}</span>
                                     </li>
                                 ))
                             ) : (
                                 <li className="flex items-center gap-3 text-sm lg:text-base text-gray-700">
-                                    <img src="icon-checker.png" alt="Check" className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                                    <img src="/icon-checker.png" alt="Check" className="w-4 h-4 flex-shrink-0 mt-0.5" />
                                     <span className='text-[13px]'>Product Feature Goes Here Long Product Feature Goes Here</span>
                                 </li>
                             )}
@@ -283,20 +283,28 @@ export default function SingleProductCard({ product }) {
 
                     {/* Action Section */}
                     <div className="mb-6">
-                        {product.discount && product.discount > 0 && (
-                            <div className="mb-2 flex items-center gap-2 justify-center">
+
+                        <div className="mb-2 flex items-center gap-2 justify-center">
+                            {product.chosen_by && product.chosen_by > 0 && (
                                 <div className="text-[13px] text-gray-600">
-                                    3K+ bought in past month
+                                    {
+                                        product.chosen_by/1000 > 0 ? `${(product.chosen_by/1000).toFixed(0)}K+ bought in past month` : `${product.chosen_by} bought in past month`
+                                    }
                                 </div>
+                            )}
+
+                            {product.discount && product.discount > 0 && (
                                 <div className="bg-[#DCFCE7] text-[#0A6339] font-bold text-[13px] px-1 rounded-tl-lg rounded-br-lg">
                                     {product.discount}% OFF
                                 </div>
-                            </div>
-                        )}
+                            )}
+                        </div>
 
-                        <button className="w-full bg-[#16CA92] hover:bg-teal-600 text-white font-bold py-3 rounded-lg transition-colors text-base lg:text-lg mb-2">
+
+
+                        <a href={product.alink} target='blank' className="flex items-center justify-center block w-full bg-[#16CA92] hover:bg-teal-600 text-white font-bold py-3 px-6 rounded-lg transition-colors text-base lg:text-lg mb-2">
                             CHECK PRICE
-                        </button>
+                        </a>
 
                         <div className="flex justify-between">
                             <div className="flex items-center justify-center gap-2 text-gray-700 text-[13px]">
@@ -342,7 +350,7 @@ export default function SingleProductCard({ product }) {
                 </div>
 
                 <div className="pt-2 pb-8 md:hidden border-t w-full">
-                    <ProductAccordion noWrapper={true} />
+                    <ProductAccordion product={product} />
                 </div>
             </div>
 
@@ -378,23 +386,19 @@ export default function SingleProductCard({ product }) {
                                             {product.discount}% OFF
                                         </div>
                                     </div>
-                                    <div className="text-[13px] text-gray-600">
-                                        3K+ bought in past month
-                                    </div>
-
                                 </>
                             )}
-                            {(!product.discount || product.discount === 0) && (
+                            {(product.chosen_by || product.chosen_by === 0) && (
                                 <div className="text-[13px] text-gray-600">
-                                    3K+ bought in past month
+                                    {product.chosen_by / 1000 > 0 ? `${(product.chosen_by / 1000).toFixed(0)}K+ bought in past month` : `${product.chosen_by} bought in past month`}
                                 </div>
                             )}
                         </div>
 
                         {/* CTA Button */}
-                        <button className="bg-[#16CA92] hover:bg-teal-600 w-full md:w-auto text-white font-bold py-3 px-6 rounded-lg transition-colors text-base lg:text-lg flex-shrink-0">
+                        <a href={product.alink} target='blank' className="flex items-center justify-center block bg-[#16CA92] hover:bg-teal-600 w-full md:w-auto text-white font-bold py-3 px-6 rounded-lg transition-colors text-base lg:text-lg flex-shrink-0">
                             CHECK PRICE
-                        </button>
+                        </a>
                     </div>
                 </div>
             )}

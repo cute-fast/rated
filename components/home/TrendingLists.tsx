@@ -5,23 +5,28 @@ export default function TrendingLists() {
     const trendingItems = [
         {
             name: "Wireless Earbuds",
-            image: "/trandinglist/wireless earbuds.png"
+            image: "/trandinglist/wireless earbuds.png",
+            link: "/wireless-earbuds"
         },
         {
             name: "Kid's Tablets",
-            image: "/trandinglist/kid tablet.png"
+            image: "/trandinglist/kid tablet.png",
+            link: "/kids-tablets"
         },
         {
             name: "Air Purifiers",
-            image: "/trandinglist/air purifier.png"
+            image: "/trandinglist/air purifier.png",
+            link: "/air-purifiers"
         },
         {
             name: "Robotic Pool Cleaners",
-            image: "/trandinglist/pool cleaner.png"
+            image: "/trandinglist/pool cleaner.png",
+            link: "/robotic-pool-cleaners"
         },
         {
             name: "Hair Dryers",
-            image: "/trandinglist/hair dryer.png"
+            image: "/trandinglist/hair dryer.png",
+            link: "/hair-dryers"
         }
     ];
 
@@ -93,21 +98,22 @@ export default function TrendingLists() {
                 {/* Desktop View - Show all cards */}
                 <div className="hidden lg:flex flex-wrap justify-center gap-6">
                     {trendingItems.map((item, index) => (
-                        <div
-                            key={index}
-                            className="w-[190px] bg-white rounded-lg overflow-hidden  cursor-pointer px-[7px] pt-[11px]"
-                        >
-                            <div className="w-full h-[190px] flex items-center justify-center bg-[#F9F9F9] border border-[#E5ECFF] rounded-[16px] shadow-lg mb-[16px] overflow-hidden">
-                                <img
-                                    src={item.image}
-                                    alt={item.name}
-                                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
-                                />
+                        <a href={item.link} target='blank' key={index}>
+                            <div
+                                className="w-[190px] bg-white rounded-lg overflow-hidden  cursor-pointer px-[7px] pt-[11px]"
+                            >
+                                <div className="w-full h-[190px] flex items-center justify-center bg-[#F9F9F9] border border-[#E5ECFF] rounded-[16px] shadow-lg mb-[16px] overflow-hidden">
+                                    <img
+                                        src={item.image}
+                                        alt={item.name}
+                                        className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
+                                    />
+                                </div>
+
+                                <p className="text-[15px] leading-[23px] font-bold text-center">{item.name}</p>
+
                             </div>
-
-                            <p className="text-[15px] leading-[23px] font-bold text-center">{item.name}</p>
-
-                        </div>
+                        </a>
                     ))}
                 </div>
 
@@ -148,22 +154,23 @@ export default function TrendingLists() {
                                 }}
                             >
                                 {trendingItems.map((item, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex-shrink-0 w-[190px] bg-white rounded-lg overflow-hidden transition-shadow cursor-pointer"
-                                    >
+                                    <a href={item.link} target='blank' key={index}>
+                                        <div
+                                            className="flex-shrink-0 w-[190px] bg-white rounded-lg overflow-hidden transition-shadow cursor-pointer"
+                                        >
 
-                                        <div className="w-full h-[190px] flex items-center justify-center bg-[#F9F9F9] border border-[#E5ECFF] rounded-[16px] shadow-lg mb-[16px] overflow-hidden">
-                                            <img
-                                                src={item.image}
-                                                alt={item.name}
-                                                className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
-                                            />
+                                            <div className="w-full h-[190px] flex items-center justify-center bg-[#F9F9F9] border border-[#E5ECFF] rounded-[16px] shadow-lg mb-[16px] overflow-hidden">
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.name}
+                                                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
+                                                />
+                                            </div>
+
+                                            <p className="text-[15px] leading-[23px] font-bold text-center">{item.name}</p>
+
                                         </div>
-
-                                        <p className="text-[15px] leading-[23px] font-bold text-center">{item.name}</p>
-
-                                    </div>
+                                    </a>
                                 ))}
                             </div>
                         </div>

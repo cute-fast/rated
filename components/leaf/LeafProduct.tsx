@@ -78,7 +78,7 @@ export default function LeafProduct({ product }) {
                 <div className="px-4 pt-[4px] pb-3 flex flex-col md:flex-row items-center">
                     {/* Mobile: Image first, centered */}
                     <div className="w-full flex justify-center mb-4 md:w-auto md:mb-0 order-1 md:order-1 md:mr-4">
-                        <img src={`/images/${product.image}`} alt="Product" className="w-full max-w-[300px] h-auto md:w-[120px] md:h-[120px] object-contain" />
+                        <img src={`${product.image}`} alt="Product" className="w-full max-w-[300px] h-auto md:w-[120px] md:h-[120px] object-contain" />
                     </div>
 
                     {/* Mobile: Rating section after image, Desktop: after product info */}
@@ -122,6 +122,7 @@ export default function LeafProduct({ product }) {
                                 >
                                     <div className="space-y-3">
                                         {product.performance !== undefined && (
+
                                             <div>
                                                 <div className="flex justify-between items-center mb-1">
                                                     <span className="text-[#06012D] text-[15px] font-weight-700 font-bold">Performance</span>
@@ -342,23 +343,28 @@ export default function LeafProduct({ product }) {
                     {/* Action section */}
                     <div className="text-center w-full md:w-[259px] order-4 md:order-4">
                         {product.discount > 0 && (
-                            <div className="mb-3 flex items-center justify-center gap-2">
-                                <div className="text-[13px] text-gray-600">
-                                    3K+ bought in past month
-                                </div>
+                            <div className="mb-2 flex items-center justify-center gap-2">
+                                {
+                                    product.chosen_by && (
+                                        <div className="text-[13px] text-gray-600">
+                                            {product.chosen_by/1000 > 0 ? `${(product.chosen_by/1000).toFixed(0)}K+ bought in past month` : `${product.chosen_by} bought in past month`}
+                                        </div>
+                                    )
+                                }
+
                                 <div className="bg-[#DCFCE7] text-[#0A6339] font-bold text-[13px] px-1 rounded-tl-lg rounded-br-lg">
                                     {product.discount}% OFF
                                 </div>
                             </div>
                         )}
 
-                        <button className="w-full h-[40px] bg-[#16CA92] hover:bg-teal-600 text-white font-bold rounded-lg transition-colors text-base lg:text-lg mb-3">
+                        <a href={product.alink} target="_blank" className="flex items-center justify-center block w-full h-[40px] bg-[#16CA92] hover:bg-teal-600 text-white font-bold rounded-lg transition-colors text-base lg:text-lg mb-2">
                             CHECK PRICE
-                        </button>
+                        </a>
 
                         <div className="flex items-center justify-center gap-2 text-gray-700 text-[13px]">
                             <div className='font-semibold'>Available on</div>
-                            <img src='/brands/logo_amazon.png' alt="Amazon" className="h-4 mt-[-4px] -mb-2" />
+                            <img src='/brands/logo_amazon.png' alt="Amazon" className="h-4 mt-[-4px] -mb-3" />
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ interface AccordionSection {
     content: string | React.ReactNode;
 }
 
-export default function ProductAccordion({ noWrapper = false }) {
+export default function ProductAccordion({ product }) {
     const [openSection, setOpenSection] = useState<string>('description');
 
     const sections: AccordionSection[] = [
@@ -26,9 +26,14 @@ export default function ProductAccordion({ noWrapper = false }) {
         {
             title: 'Factors to Consider',
             content: (
-                <p className="text-gray-600">
-                    Factors to consider when choosing this product include performance, reliability, value, popularity, and support. Each factor plays a crucial role in determining the overall quality and user satisfaction.
-                </p>
+
+                <div className="space-y-2">
+                    {product.ftc.map((item, index) => (
+                        <p key={index} className="text-gray-600">
+                            {item}
+                        </p>
+                    ))}
+                </div>
             )
         },
         {
@@ -43,14 +48,20 @@ export default function ProductAccordion({ noWrapper = false }) {
             title: 'FAQ',
             content: (
                 <div className="space-y-4">
-                    <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">What is the warranty period?</h4>
-                        <p className="text-gray-600">The product comes with a standard 1-year warranty covering manufacturing defects.</p>
-                    </div>
-                    <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Is this product compatible with my system?</h4>
-                        <p className="text-gray-600">Please check the product specifications to ensure compatibility with your system requirements.</p>
-                    </div>
+
+                    {
+                        product.faq.map((item, index) => {
+                            if (index % 2 === 0) {
+                                return (
+                                    <div key={index}>
+                                        <h4 className="font-semibold text-gray-900 mb-2">{item}</h4>
+                                        <p className="text-gray-600">{product.faq[index + 1]}</p>
+                                    </div>
+                                );
+                            }
+                        })
+                    }
+
                 </div>
             )
         },
@@ -58,7 +69,7 @@ export default function ProductAccordion({ noWrapper = false }) {
             title: 'Bottom Line',
             content: (
                 <p className="text-gray-600">
-                    Overall, this product offers excellent value for money with strong performance across all key metrics. It is highly recommended for users seeking a reliable and well-supported solution.
+                    {product.conclusion}
                 </p>
             )
         }
@@ -110,10 +121,6 @@ export default function ProductAccordion({ noWrapper = false }) {
             </div>
         </div>
     );
-
-    if (noWrapper) {
-        return accordionContent;
-    }
 
     return (
         <section className='px-4'>

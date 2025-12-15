@@ -4,6 +4,7 @@ import Footer from '../components/public/Footer';
 import Header from '../components/public/Header';
 import ContactForm from '../components/contact-us/ContactForm';
 import DisclosureBanner from '../components/public/DisclosureBanner';
+import Newsletter from '../components/public/Newsletter';
 
 export default function ContactUs() {
   return (
@@ -15,6 +16,7 @@ export default function ContactUs() {
       <DisclosureBanner />
       <Header />
       <ContactForm />
+      <Newsletter />
       <Footer />
     </>
   );
