@@ -40,7 +40,7 @@ export default function ProductPage() {
         image: res.data.image_1,
         image_1: res.data.image_1,
         rating: res.data.numOfRatings,
-        alink: res.data.alink,
+        alink: res.data.alink.split("?")[0],
 
         chosen_by: res.data.chosen_by,
         score: res.data.score,

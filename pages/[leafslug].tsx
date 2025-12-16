@@ -79,6 +79,7 @@ export default function LeafCategoryPage() {
 
   const mappedProducts = data.main_products?.map((product: any, index: number) => {
     
+    
     return {
       id: index + 1,
       image: product.image_1,
@@ -99,7 +100,7 @@ export default function LeafCategoryPage() {
       popularity: product.popularity ? product.popularity : 10,
       support: product.support ? parseFloat(product.support) : 10,
       slug: product.slug || '',
-      alink: product.alink || ''
+      alink: product.alink.split("?")[0] || ''
     };
   }) || [];
 
@@ -126,7 +127,7 @@ export default function LeafCategoryPage() {
       popularity: data.sponsor_product.popularity ? data.sponsor_product.popularity : 10,
       support: data.sponsor_product.support ? parseFloat(data.sponsor_productduct.support) : 10,
       slug: data.sponsor_product.slug || '',
-      alink: data.sponsor_product.alink || ''
+      alink: data.sponsor_product.alink.split("?")[0] || ''
 
     };
     mappedProducts.unshift(sponsorProduct);
