@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import HeroSection from '../components/home/HeroSection';
 import Footer from '../components/public/Footer';
@@ -12,6 +12,33 @@ import Newsletter from '../components/public/Newsletter';
 import DisclosureBanner from '../components/public/DisclosureBanner';
 
 export default function NewPage() {
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    if (document.readyState === 'complete') {
+      setIsReady(true);
+      return;
+    }
+
+    const handleLoad = () => setIsReady(true);
+    window.addEventListener('load', handleLoad);
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
+  if (!isReady) {
+    // Simple full-screen loader so the page only shows once everything is ready
+    return (
+      <div className="min-h-screen w-full flex items-center justify-center bg-white">
+        <span className="text-gray-500 text-sm">Loading…</span>
+      </div>
+    );
+  }
+
   return (
     <>
       <Head>
