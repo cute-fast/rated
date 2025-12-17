@@ -211,6 +211,7 @@ export default function Header() {
                                                         className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b last:border-b-0"
                                                         onClick={() => handleSuggestionClick(suggestion)}
                                                     >
+                                                        <span><img src={suggestion.image_url} alt={suggestion.name} className="h-10" /></span>
                                                         <span className="text-gray-900">{suggestion.displayText || suggestion.name}</span>
                                                     </div>
                                                 ))
