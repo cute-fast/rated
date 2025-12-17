@@ -34,11 +34,7 @@ export default function HeroSection() {
 
         setLoadingSuggestions(true)
         try {
-            const [prodRes, catRes] = await Promise.all([
-                axios.get('https://api.rated.xyz/api/search/products', { params: { q: heroSearchValue, size: 5 } }).catch((err) => {
-                    console.error('Products search error:', err)
-                    return { data: [] }
-                }),
+            const [catRes] = await Promise.all([
                 axios.get('https://api.rated.xyz/api/search/categories', { params: { q: heroSearchValue, size: 5 } }).catch((err) => {
                     console.error('Categories search error:', err)
                     return { data: [] }
@@ -46,10 +42,9 @@ export default function HeroSection() {
             ])
 
             const combined = [
-                ...(prodRes.data || []).map((p: any) => ({ ...p, name: p.name, type: 'Product', displayText: p.name })),
                 ...(catRes.data || []).map((c: any) => ({ ...c, name: c.name, type: 'Category', displayText: c.name }))
             ]
-            setSuggestions(combined.slice(0, 10))
+            setSuggestions(combined.slice(0, 5))
         } catch (error) {
             console.error('Error fetching suggestions:', error)
             setSuggestions([])
@@ -103,7 +98,7 @@ export default function HeroSection() {
                         loop
                         playsInline
                     />
-                    
+
                     <video
                         className="md:hidden absolute bottom-0 w-[1150px] bottom-[20px] h-auto max-w-none left-[calc(-92%+((100vw-390px)*1.5))] object-cover object-center"
                         src="./hero.mp4"
@@ -180,14 +175,12 @@ export default function HeroSection() {
                                                     onClick={() => handleHeroSuggestionClick(suggestion)}
                                                     className="w-full flex items-center gap-3 text-left hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
                                                 >
-                                                    <div className="w-[56px] bg-gray-100 py-3 px-5 h-12">
-                                                        <Search className="h-4 w-4 text-black flex-shrink-0" />
-                                                    </div>
 
+                                                    <span><img src={suggestion.image_url} alt={suggestion.name} className="h-20 w-20" /></span>
                                                     <div className="flex-1 text-black font-medium">
                                                         {suggestion.displayText || suggestion.name}
                                                     </div>
-                                                    <div className="border-l text-center w-[150px] text-gray-500 text-sm ml-2 h-12 py-3">{suggestion.type}</div>
+
                                                 </button>
                                             ))
                                         ) : (
