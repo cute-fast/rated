@@ -91,8 +91,8 @@ export default function HeroSection() {
                     <video
                         className="hidden md:block absolute lg:top-[-20%] xl:top-[-32%] right-[-15%] w-full object-cover object-center"
                         src="./hero.mp4"
-                        poster="./hero_desktop.png"
-                        preload="auto"
+                        // poster="./hero_desktop.png"
+                        // preload="auto"
                         autoPlay
                         muted
                         loop
@@ -103,7 +103,6 @@ export default function HeroSection() {
                         className="md:hidden absolute bottom-0 w-[1150px] bottom-[20px] h-auto max-w-none left-[calc(-92%+((100vw-390px)*1.5))] object-cover object-center"
                         src="./hero.mp4"
                         poster="./hero_mobile.png"
-                        preload="auto"
                         autoPlay
                         muted
                         loop
@@ -176,7 +175,7 @@ export default function HeroSection() {
                                                     className="w-full flex items-center gap-3 text-left hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 px-4 py-3"
                                                 >
 
-                                                    <span><img src={suggestion.image_url} alt={suggestion.name} className="h-15 w-15" /></span>
+                                                    <span><img src={suggestion.image_url} alt={suggestion.name} className="h-16 w-16" /></span>
                                                     <div className="flex-1 text-black font-medium">
                                                         {suggestion.displayText || suggestion.name}
                                                     </div>
