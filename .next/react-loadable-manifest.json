@@ -1,8 +1,0 @@
-{
-  "components\\home\\StatsTicker.tsx -> react-fast-marquee": {
-    "id": "components\\home\\StatsTicker.tsx -> react-fast-marquee",
-    "files": [
-      "static/chunks/node_modules_react-fast-marquee_dist_index_js.js"
-    ]
-  }
-}

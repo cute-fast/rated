@@ -96,6 +96,8 @@ export default function HeroSection() {
                     <video
                         className="hidden md:block absolute lg:top-[-20%] xl:top-[-32%] right-[-15%] w-full object-cover object-center"
                         src="./hero.mp4"
+                        poster="./hero_desktop.png"
+                        preload="auto"
                         autoPlay
                         muted
                         loop
@@ -105,6 +107,8 @@ export default function HeroSection() {
                     <video
                         className="md:hidden absolute bottom-0 w-[1150px] bottom-[20px] h-auto max-w-none left-[calc(-92%+((100vw-390px)*1.5))] object-cover object-center"
                         src="./hero.mp4"
+                        poster="./hero_mobile.png"
+                        preload="auto"
                         autoPlay
                         muted
                         loop
