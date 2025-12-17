@@ -173,10 +173,10 @@ export default function HeroSection() {
                                                     key={`${suggestion.type}-${suggestion.slug || suggestion.asin || index}`}
                                                     type="button"
                                                     onClick={() => handleHeroSuggestionClick(suggestion)}
-                                                    className="w-full flex items-center gap-3 text-left hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
+                                                    className="w-full flex items-center gap-3 text-left hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 px-4 py-3"
                                                 >
 
-                                                    <span><img src={suggestion.image_url} alt={suggestion.name} className="h-20 w-20" /></span>
+                                                    <span><img src={suggestion.image_url} alt={suggestion.name} className="h-15 w-15" /></span>
                                                     <div className="flex-1 text-black font-medium">
                                                         {suggestion.displayText || suggestion.name}
                                                     </div>
