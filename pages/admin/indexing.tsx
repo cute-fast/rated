@@ -43,7 +43,7 @@ export default function IndexingManager() {
   const [indexProducts, setIndexProducts] = useState(true);
   const [indexCategories, setIndexCategories] = useState(true);
 
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://3.91.202.144:8000';
+  const API_BASE_URL = "https://api.rated.xyz";
 
   useEffect(() => {
     fetchStatus();

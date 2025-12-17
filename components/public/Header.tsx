@@ -211,9 +211,7 @@ export default function Header() {
                                                         className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b last:border-b-0"
                                                         onClick={() => handleSuggestionClick(suggestion)}
                                                     >
-                                                        <Search className="w-4 h-4 text-gray-400" />
                                                         <span className="text-gray-900">{suggestion.displayText || suggestion.name}</span>
-                                                        <span className="text-sm text-gray-500 ml-auto">{suggestion.type}</span>
                                                     </div>
                                                 ))
                                             ) : (
