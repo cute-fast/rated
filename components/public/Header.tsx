@@ -21,6 +21,7 @@ function MobileSearchInput({
     onSuggestionClick: (suggestion: any) => void
     onClose: () => void 
 }) {
+    console.log(suggestions)
     return (
         <div className="relative w-full">
             <form onSubmit={onSearchSubmit} className="relative">
@@ -45,15 +46,15 @@ function MobileSearchInput({
                     {loadingSuggestions ? (
                         <div className="px-4 py-3 text-gray-500 text-sm">Loading...</div>
                     ) : suggestions.length > 0 ? (
+                        
                         suggestions.map((suggestion, index) => (
                             <div
                                 key={`${suggestion.type}-${suggestion.slug || suggestion.asin || index}`}
                                 className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b last:border-b-0"
                                 onClick={() => onSuggestionClick(suggestion)}
                             >
-                                <Search className="w-4 h-4 text-gray-400" />
+                                
                                 <span className="text-gray-900">{suggestion.displayText || suggestion.name}</span>
-                                <span className="text-sm text-gray-500 ml-auto">{suggestion.type}</span>
                             </div>
                         ))
                     ) : (
@@ -95,25 +96,31 @@ export default function Header() {
 
         setLoadingSuggestions(true)
         try {
-            const [prodRes, catRes] = await Promise.all([
-                axios.get('https://api.rated.xyz/api/search/products', { params: { q: searchValue, size: 5 } }).catch((err) => {
-                    console.error('Products search error:', err)
-                    return { data: [] }
-                }),
+            // const [prodRes, catRes] = await Promise.all([
+            //     axios.get('https://api.rated.xyz/api/search/products', { params: { q: searchValue, size: 5 } }).catch((err) => {
+            //         console.error('Products search error:', err)
+            //         return { data: [] }
+            //     }),
+            //     axios.get('https://api.rated.xyz/api/search/categories', { params: { q: searchValue, size: 5 } }).catch((err) => {
+            //         console.error('Categories search error:', err)
+            //         return { data: [] }
+            //     })
+            // ])
+
+            const [catRes] = await Promise.all([
                 axios.get('https://api.rated.xyz/api/search/categories', { params: { q: searchValue, size: 5 } }).catch((err) => {
                     console.error('Categories search error:', err)
                     return { data: [] }
                 })
             ])
 
-            console.log('Search results:', { products: prodRes.data, categories: catRes.data })
+            console.log('Search results:', { categories: catRes.data })
 
             const combined = [
-                ...(prodRes.data || []).map((p: any) => ({ ...p, type: 'Product', displayText: p.name })),
                 ...(catRes.data || []).map((c: any) => ({ ...c, type: 'Category', displayText: c.name }))
             ]
-            setSuggestions(combined.slice(0, 10))
-            console.log('Combined suggestions:', combined)
+            setSuggestions(combined.slice(0, 5))
+            // console.log('Combined suggestions:', combined)
         } catch (error) {
             console.error('Error fetching suggestions:', error)
             setSuggestions([])
