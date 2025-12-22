@@ -30,10 +30,10 @@ export default function Newsletter() {
       </div>
 
       <div className="container relative z-10 mx-auto max-w-4xl px-8 text-center">
-        <h2 className="mb-1 text-2xl font-bold text-white md:text-2xl">
+        <h2 className="mb-1 text-hurme-semibold text-semibold text-white text-[24px] leading-[29px] tracking-normal md:tracking-[0.48px]">
           Rated Updates & Insights
         </h2>
-        <p className="mb-4 text-lg text-white/90">
+        <p className="mb-4 font-normal text-[15px] leading-[21px] tracking-normal text-white">
           Get exclusive product insights, fresh finds, and expert picks.
         </p>
 
@@ -44,13 +44,13 @@ export default function Newsletter() {
               placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="h-12 sm:flex-1 rounded-lg md:rounded-r-none border-0 bg-white px-4 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none"
+              className="h-12 sm:flex-1 rounded-lg md:rounded-r-none border-0 bg-white px-4 text-content placeholder:text-gray-500 focus:outline-none"
               required
             />
             <div className="h-12 p-[2px] rounded-lg md:rounded-l-none bg-gradient-to-r from-[#3D00A6] via-[#E500FF] to-[#080078]">
               <button
                 type="submit"
-                className="h-full w-full rounded-lg md:rounded-l-none bg-[#0E00DE] px-8 text-base font-semibold text-white hover:bg-blue-700"
+                className="h-full w-full rounded-lg md:rounded-l-none bg-[#0E00DE] px-8 bt-style "
               >
                 SIGN UP
               </button>
@@ -68,7 +68,7 @@ export default function Newsletter() {
               />
 
               {/* Custom circular checkbox */}
-              <div className="w-4 h-4 rounded-full border-2 border-white/80 flex items-center justify-center
+              <div className="w-4 h-4 rounded-full border-2 border-[#ABBDFF] flex items-center justify-center
                     peer-checked:bg-[#ABBDFF] peer-checked:border-[#ABBDFF] transition-all">
                 {/* Checkmark */}
                 {agreed && (
@@ -84,7 +84,7 @@ export default function Newsletter() {
                 )}
               </div>
 
-              <span className="text-[#ABBDFF] ml-2 text-[11px]">
+              <span className="text-[#ABBDFF] ml-2 text-[11px] leading-[17px]">
                 I agree to the{" "}
                 <a href="#" className="underline hover:text-white">Terms of Use</a> and{" "}
                 <a href="#" className="underline hover:text-white">Privacy Policy</a>.

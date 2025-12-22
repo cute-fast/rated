@@ -245,7 +245,7 @@ export default function AllCategories() {
           )}
         </nav>
         {!activeMobileCategory && (
-        <h2 className="text-[32px] md:text-[48px] font-bold text-[#0E033B] mt-0 mb-6">All Categories</h2>
+        <h2 className="font-hurme-semibold font-semibold text-[32px] leading-[38px] tracking-normal md:text-[48px] md:leading-[58px] md:tracking-[0.96px] text-[#06012D] mt-0 mb-6 md:mb-0">All Categories</h2>
         )}
         <div className="md:pt-[32px] md:px-[96px]">
           
@@ -292,7 +292,7 @@ export default function AllCategories() {
                 </button>
 
                 <div className="my-0">
-                  <h3 className="text-[32px] font-bold text-[#0E033B] py-4 border border-l-0 border-b-0 border-r-0 border-gray-300">{activeMobileCategory.name}</h3>
+                  <h3 className="text-[32px] leading-[38px] font-bold text-[#0E033B] py-4 border border-l-0 border-b-0 border-r-0 border-gray-300">{activeMobileCategory.name}</h3>
                   <div className="bg-white border border-gray-300 border-l-0 border-r-0 divide-y divide-gray-300 shadow-sm">
                     {activeMobileCategory.level2s.length > 0 ? (
                       activeMobileCategory.level2s.map((subCat) => (
@@ -352,7 +352,7 @@ export default function AllCategories() {
                             />
                           </div>
                         </div>
-                        <h3 className="text-[15px] leading-[23px] font-bold text-center">{category.name}</h3>
+                        <h3 className="font-hurme-bold font-bold text-[15px] leading-[23px] text-center">{category.name}</h3>
                       </div>
                     </div>
                   </Link>
@@ -366,7 +366,7 @@ export default function AllCategories() {
                       <Link
                         key={subCat.slug}
                         href={`/category/${category.slug}/${subCat.slug}`}
-                        className="block text-sm text-gray-700 hover:text-[#0E033B] transition-colors leading-relaxed"
+                        className="block text-[15px] leading-[21px] tracking-normal text-[#06012D] hover:underline transition-colors leading-relaxed"
                       >
                         {subCat.name}
                       </Link>
@@ -376,7 +376,7 @@ export default function AllCategories() {
                       <button
                         type="button"
                         onClick={() => toggleCategory(category.slug)}
-                        className="mt-3 text-sm text-[#0E00DE] no-underline hover:underline"
+                        className="mt-3 text-[15px] leading-[21px] text-[#0E00DE] underline"
                       >
                         {expandedCategories[category.slug] ? "Show Less" : `Show All (${category.level2s.length})`}
                       </button>

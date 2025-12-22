@@ -5,21 +5,21 @@ import { useRouter } from "next/router"
 import axios from "axios"
 
 // Mobile Search Input Component (for second row)
-function MobileSearchInput({ 
-    searchValue, 
-    onSearchChange, 
-    onSearchSubmit, 
-    suggestions, 
-    loadingSuggestions, 
-    onSuggestionClick 
-}: { 
+function MobileSearchInput({
+    searchValue,
+    onSearchChange,
+    onSearchSubmit,
+    suggestions,
+    loadingSuggestions,
+    onSuggestionClick
+}: {
     searchValue: string
     onSearchChange: (value: string) => void
     onSearchSubmit: (e?: React.FormEvent) => void
     suggestions: any[]
     loadingSuggestions: boolean
     onSuggestionClick: (suggestion: any) => void
-    onClose: () => void 
+    onClose: () => void
 }) {
     return (
         <div className="relative w-full">
@@ -45,7 +45,7 @@ function MobileSearchInput({
                     {loadingSuggestions ? (
                         <div className="px-4 py-3 text-gray-500 text-sm">Loading...</div>
                     ) : suggestions.length > 0 ? (
-                        
+
                         suggestions.map((suggestion, index) => (
                             <div
                                 key={`${suggestion.type}-${suggestion.slug || suggestion.asin || index}`}
@@ -193,7 +193,7 @@ export default function Header() {
                                                     handleSearchSubmit()
                                                 }
                                             }}
-                                            className={`focus:outline-none focus:ring-0 w-full h-10 pl-12 pr-4 text-lg bg-white rounded-[4px] border border-[#0E033B] text-[#0E033B] placeholder:text-[#0E033B] focus:outline-none focus:ring-0 ${isSearchOpen && searchValue && searchValue.length >= 2 && (loadingSuggestions || suggestions.length > 0) && 'rounded-b-none'}`}
+                                            className={`focus:outline-none focus:ring-0 w-full h-10 pl-12 pr-4 text-[13px] leading-[16px] bg-white rounded-[4px] border border-[#0E033B] text-[#0E033B] placeholder:text-[#0E033B] focus:outline-none focus:ring-0 ${isSearchOpen && searchValue && searchValue.length >= 2 && (loadingSuggestions || suggestions.length > 0) && 'rounded-b-none'}`}
                                             autoFocus={isSearchOpen}
                                         />
                                     </form>
@@ -230,7 +230,7 @@ export default function Header() {
                         )}
 
                         {/* All Categories - Desktop */}
-                        <a href="/categories" className="h-11 text-lg text-[#0E033B] font-medium hover:text-black hover:bg-gray-50 flex items-center gap-2">
+                        <a href="/categories" className="text-[15px] tracking-normal leading-[21px] font-normal">
                             All Categories
                         </a>
                     </div>
@@ -255,9 +255,9 @@ export default function Header() {
                                     <Search className="w-5 h-5 stroke-[1.5]" />
                                 </button>
 
-                                <button className="h-11 text-lg text-[#0E033B] font-medium hover:text-black hover:bg-gray-50 flex items-center gap-2">
+                                <a href="/categories" className="text-[13px] tracking-normal leading-[26px] font-normal">
                                     All Categories
-                                </button>
+                                </a>
                             </div>
                         </div>
                     ) : (
@@ -285,14 +285,14 @@ export default function Header() {
 
                             {/* Second Row: Mobile Search Bar */}
                             <div className="w-full">
-                                <MobileSearchInput 
+                                <MobileSearchInput
                                     searchValue={searchValue}
                                     onSearchChange={handleSearchChange}
                                     onSearchSubmit={handleSearchSubmit}
                                     suggestions={suggestions}
                                     loadingSuggestions={loadingSuggestions}
                                     onSuggestionClick={handleSuggestionClick}
-                                    onClose={() => setIsMobileSearchOpen(false)} 
+                                    onClose={() => setIsMobileSearchOpen(false)}
                                 />
                             </div>
                         </>

@@ -61,7 +61,7 @@ export default function LeafProduct({ product }) {
                                 }}
                             >
                                 <span
-                                    className="font-hurme text-white text-[13px] font-bold text-edge-cap"
+                                    className="font-hurme-semibold text-white text-[13px] leading-[38px] tracking-[0.39px] md:tracking-normal font-bold text-edge-cap"
                                     style={{
                                         lineHeight: '16px',
                                         transform: 'rotate(180deg)',
@@ -326,7 +326,7 @@ export default function LeafProduct({ product }) {
 
                     {/* Mobile: Product info after rating, Desktop: after image */}
                     <div className="mb-6 w-full md:mb-0 md:w-[395px] md:flex-1 order-4 md:order-2 md:mr-20">
-                        <h3 className="font-bold text-lg lg:text-[15px] text-gray-900 mb-[8px] md:text-left md:tracking-[0.03em]">
+                        <h3 className="font-bold font-hurme-bold text-[15px] leading-[23px] text-[#06012D] mb-[8px] md:text-left tracking-normal">
                             {product.name}
                         </h3>
 
@@ -334,7 +334,7 @@ export default function LeafProduct({ product }) {
                             {product.features.slice(0, 3).map((feature, index) => (
                                 <li key={index} className="flex items-center gap-3 text-sm lg:text-base text-gray-700">
                                     <img src="icon-checker.png" alt="Check" className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                                    <span className='text-[13px]'>{feature}</span>
+                                    <span className='text-[13px] leading-[16px]'>{feature}</span>
                                 </li>
                             ))}
                         </ul>
@@ -346,13 +346,13 @@ export default function LeafProduct({ product }) {
                             <div className="mb-2 flex items-center justify-center gap-2">
                                 {
                                     product.chosen_by && (
-                                        <div className="text-[13px] text-gray-600">
+                                        <div className="text-[13px] leading-[16px] text-[#676767]">
                                             {product.chosen_by/1000 > 0 ? `${(product.chosen_by/1000).toFixed(0)}K+ bought in past month` : `${product.chosen_by} bought in past month`}
                                         </div>
                                     )
                                 }
 
-                                <div className="bg-[#DCFCE7] text-[#0A6339] font-bold text-[13px] px-1 rounded-tl-lg rounded-br-lg">
+                                <div className="bg-[#DCFCE7] text-[#0A6339] font-bold text-[13px] leading-[16px] px-1 rounded-tl-lg rounded-br-lg">
                                     {product.discount}% OFF
                                 </div>
                             </div>
@@ -362,8 +362,8 @@ export default function LeafProduct({ product }) {
                             CHECK PRICE
                         </a>
 
-                        <div className="flex items-center justify-center gap-2 text-gray-700 text-[13px]">
-                            <div className='font-semibold'>Available on</div>
+                        <div className="flex items-center justify-center gap-2 text-[#06012D] text-[13px]">
+                            <div>Available on</div>
                             <img src='/brands/logo_amazon.png' alt="Amazon" className="h-4 mt-[-4px] -mb-3" />
                         </div>
                     </div>

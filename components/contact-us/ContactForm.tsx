@@ -108,25 +108,20 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="bg-[radial-gradient(39.11%_46.94%_at_77.47%_48.26%,rgba(18,3,172,0.15)_0%,rgba(229,236,255,0.15)_100%)] py-16 px-4">
+    <section className="bg-[radial-gradient(39.11%_46.94%_at_77.47%_48.26%,rgba(18,3,172,0.15)_0%,rgba(229,236,255,0.15)_100%)] pt-8 md:py-16 px-4">
       <div className="max-w-[1312px] mx-auto">
         <div className="flex flex-col md:flex-row md:gap-[100px]">
           <div className="flex-1 space-y-8 flex items-center m-auto">
             <div className="">
               <div className="mb-12">
-                <h1 className="hidden md:block text-[48px] tracking-[0.02em] md:text-[68px] font-semibold text-[#0E033B] mb-4 text-center md:text-left md:leading-[76px]">
+                <h1 className="font-semibold font-hurme-semibold text-[48px] tracking-normal md:text-[68px] text-[#06012D] md:tracking-[1.36px] mb-4 text-center md:text-left md:leading-[76px]">
                   Build Brand<br />
-                  Momentum With Rated
+                  Momentum<br className="block md:hidden" /> With Rated
                 </h1>
-                <h1 className="md:hidden text-[48px] tracking-[0.02em] leading-[58px] md:text-[68px] font-semibold text-[#0E033B] mb-6 text-center md:text-left md:leading-[76px]">
-                  Build Brand<br />
-                  Momentum<br />
-                  With Rated
-                </h1>
-                <p className="hidden tracking-[0.02em] md:block text-[18px] text-[#0E033B] leading-[-2px] text-center md:text-left max-w-[541px]">
+                <p className="hidden tracking-[0.36px] md:block text-[18px] text-[#06012D] leading-[-2px] text-center md:text-left max-w-[541px]">
                   Rated, driven by Buyer IQ, highlights the best products in every category using millions of real consumer insights.
                 </p>
-                <p className="max-w-[388px] md:hidden text-[18px] tracking-[0.02em] text-[#0E033B] leading-relaxed text-center md:text-left">
+                <p className="max-w-[388px] md:hidden text-[18px] tracking-[0.36px] text-[#06012D] leading-relaxed text-center md:text-left">
                   Rated, driven by Buyer IQ, highlights the best products in every category using millions of real consumer insights.
                 </p>
               </div>
@@ -136,8 +131,8 @@ export default function ContactForm() {
                   <div className="flex justify-center md:justify-start mb-4">
                     <img src='/icon-shield.png' alt='Shield' width="64" />
                   </div>
-                  <h3 className="text-[20px] font-bold text-[#0E033B] mb-2 text-center md:text-left">Trusted Ratings At Scale</h3>
-                  <p className="text-[#0E033B] text-center md:text-left text-[15px] max-w-[325px] m-auto">
+                  <h3 className="text-[20px] leading-[24px] font-hurme-semibold font-semibold text-[#0E033B] mb-2 text-center md:text-left">Trusted Ratings At Scale</h3>
+                  <p className="text-[#06012D] content-text text-center md:text-left text-[15px] max-w-[325px] m-auto">
                     Millions of real consumer insights power product scores that drive confident shopping decisions.
                   </p>
                 </div>
@@ -146,8 +141,8 @@ export default function ContactForm() {
                   <div className="flex justify-center md:justify-start mb-4">
                     <img src='/icon-goal.png' alt='Shield' width="64" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0E033B] mb-2 text-center md:text-left">High-Intent Shoppers</h3>
-                  <p className="text-[#0E033B] text-center md:text-left max-w-[325px] m-auto">
+                  <h3 className="text-[20px] leading-[24px] font-hurme-semibold font-semibold text-[#0E033B] mb-2 text-center md:text-left">High-Intent Shoppers</h3>
+                  <p className="text-[#06012D] content-text text-center md:text-left max-w-[325px] m-auto">
                     Data-driven comparisons attract engaged users ready to discover top-rated products.
                   </p>
                 </div>
@@ -156,8 +151,8 @@ export default function ContactForm() {
                   <div className="flex justify-center md:justify-start mb-4">
                     <img src='/icon-apart.png' alt='Shield' width="64" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0E033B] mb-2 text-center md:text-left">Unmatched Visibility</h3>
-                  <p className="text-[#0E033B] text-center md:text-left max-w-[325px] m-auto">
+                  <h3 className="text-[20px] leading-[24px] font-hurme-semibold font-semibold text-[#0E033B] mb-2 text-center md:text-left">Unmatched Visibility</h3>
+                  <p className="text-[#06012D] content-text text-center md:text-left max-w-[325px] m-auto">
                     Showcase your brand where consumner are actively searching for the best options.
                   </p>
                 </div>
@@ -175,7 +170,7 @@ export default function ContactForm() {
               </div>
 
               <div className="bg-white rounded-lg p-6 md:p-8 shadow-lg relative z-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#0E033B] mb-6 text-center">
+                <h2 className="text-[24px] leading-[29px] tracing-[0.48px] font-hurme-semibold font-semibold text-[#06012D] mb-6 text-center">
                   Partner with Rated
                 </h2>
 
@@ -186,7 +181,7 @@ export default function ContactForm() {
                     placeholder="First Name"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent"
+                    className="text-[15px] leading-[23px] w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent"
                     required
                   />
 
@@ -196,7 +191,7 @@ export default function ContactForm() {
                     placeholder="Email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent"
+                    className="text-[15px] leading-[23px] w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent"
                     required
                   />
 
@@ -206,7 +201,7 @@ export default function ContactForm() {
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent"
+                    className="text-[15px] leading-[23px] w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent"
                   />
 
                   <input
@@ -215,7 +210,7 @@ export default function ContactForm() {
                     placeholder="Website"
                     value={formData.website}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent"
+                    className="text-[15px] leading-[23px] w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent"
                   />
 
                   <input
@@ -224,7 +219,7 @@ export default function ContactForm() {
                     placeholder="Company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent"
+                    className="text-[15px] leading-[23px] w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent"
                   />
 
                   <textarea
@@ -233,7 +228,7 @@ export default function ContactForm() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent resize-none"
+                    className="text-[15px] leading-[23px] w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E033B] focus:border-transparent resize-none"
                   />
 
                   {/* reCAPTCHA */}

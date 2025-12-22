@@ -269,7 +269,7 @@ export default function SingleProductCard({ product }) {
                                 product.features.slice(0, 3).map((feature, index) => (
                                     <li key={index} className="flex items-center gap-3 text-sm lg:text-base text-gray-700">
                                         <img src="/icon-checker.png" alt="Check" className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                                        <span className='text-[13px] leading-none'>{feature}</span>
+                                        <span className='text-[13px] leading-[16px]'>{feature}</span>
                                     </li>
                                 ))
                             ) : (

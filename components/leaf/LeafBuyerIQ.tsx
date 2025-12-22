@@ -39,16 +39,16 @@ export default function LeafBuyerIQ() {
                         <div className="max-w-xl py-8">
                             <div className="flex justify-center">
 
-                                <h4 className="inline-flex text-[32px] md:text-[36px] leading-[38px] md:leading-[43px] font-bold bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-2">
+                                <h4 className="inline-flex text-[32px] md:text-[36px] leading-[38px] tracking-normal md:leading-[43px] md:tracking-[0.72px] font-semibold font-hurme-semibold bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-2">
                                     Buyer IQ
                                 </h4>
                             </div>
-                            <h2 className="mb-6 font-bold text-[32px] lg:text-[48px] text-center leading-[38px] md:leading-[58px] tracking-[0.02em]">The Science of<br />Smart Shopping</h2>
+                            <h2 className="mb-6 font-hurme-semibold font-semibold text-[32px] md:text-[48px] text-center leading-[38px] md:leading-[58px] tracking-[0.02em]">The Science of<br />Smart Shopping</h2>
                             <div className="flex justify-center">
-                                <div className="h-12 p-[2px] rounded-lg bg-gradient-to-r from-[#3D00A6] via-[#E500FF] to-[#080078] w-[170px]">
+                                <div className="h-12 p-[2px] rounded-lg bg-gradient-to-r from-[#3D00A6] via-[#E500FF] to-[#080078]">
                                     <button
                                         type="submit"
-                                        className="h-full rounded-lg bg-[#0E00DE] px-8 text-base font-semibold text-white hover:bg-blue-700"
+                                        className="h-full rounded-lg bg-[#0E00DE] px-8 bt-style"
                                     >
                                         LEARN MORE
                                     </button>

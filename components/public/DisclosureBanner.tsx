@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { X } from "lucide-react";
 
 export default function DisclosureBanner() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -16,7 +17,7 @@ export default function DisclosureBanner() {
   const disclosureContent = (
     <>
       <div className="border-t border-gray-300 mb-4"></div>
-      <h2 className="text-xl font-bold text-[#0E033B] mb-4">
+      <h2 className="text-[13px] leading-[16px] mb-4">
         Advertising Disclosure
       </h2>
       <div className="text-[#0E033B] text-sm leading-relaxed space-y-3">
@@ -24,16 +25,10 @@ export default function DisclosureBanner() {
           Rated may receive compensation when you use our links or when brands support our work.
           This support helps keep the site free, while our product evaluations and scoring remain
           independent.
-        </p>
-        <p>
           Some placements are sponsored and clearly identified as such. Sponsorship may influence
           where or how offers appear, but it does not affect our scoring methodology.
-        </p>
-        <p>
           You will never pay extra by using our links. We do not cover every brand or product
           available, and the inclusion of a listing does not imply endorsement.
-        </p>
-        <p>
           Information, including pricing and availability, may change at any time without notice.
           Please review our Terms of Use for additional details.
         </p>
@@ -43,7 +38,7 @@ export default function DisclosureBanner() {
 
   return (
     <>
-      <div className="hidden md:block bg-[#0E033B] text-white py-3 px-4 text-center text-sm">
+      <div className="hidden md:block bg-[#0E033B] py-3 px-4 text-center text-[13px] leading-[16px] text-white">
         <p>
           When you buy through our links, we may earn a commission.{" "}
           <button
@@ -83,7 +78,7 @@ export default function DisclosureBanner() {
           }}
         >
           <div
-            className="bg-white rounded-lg max-w-2xl w-full p-6 md:p-8 relative max-h-[90vh] overflow-y-auto"
+            className="bg-[#F4F7FF] rounded-lg max-w-2xl w-full p-6 md:p-8 relative max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -94,31 +89,23 @@ export default function DisclosureBanner() {
               className="absolute top-4 right-4 text-[#0E033B] hover:opacity-70 transition-opacity text-2xl font-bold leading-none"
               aria-label="Close"
             >
-              ×
+              <X className="w-6 h-6" />
             </button>
 
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0E033B] mb-6 pr-8">
+            <h2 className="text-[15px] leading-[25px] font-hurme-bold font-bold text-[#06012D] mb-6 pr-8">
               Advertising Disclosure
             </h2>
 
-            <div className="text-[#0E033B] text-sm md:text-base leading-relaxed space-y-4">
-              <p>
+            <div className="text-[#06012D] text-[15px] leading-[25px] md:text-base leading-relaxed space-y-4">
                 Rated may receive compensation when you use our links or when brands support our work.
                 This support helps keep the site free, while our product evaluations and scoring remain
                 independent.
-              </p>
-              <p>
                 Some placements are sponsored and clearly identified as such. Sponsorship may influence
                 where or how offers appear, but it does not affect our scoring methodology.
-              </p>
-              <p>
                 You will never pay extra by using our links. We do not cover every brand or product
                 available, and the inclusion of a listing does not imply endorsement.
-              </p>
-              <p>
                 Information, including pricing and availability, may change at any time without notice.
                 Please review our Terms of Use for additional details.
-              </p>
             </div>
           </div>
         </div>

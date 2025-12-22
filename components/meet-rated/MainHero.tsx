@@ -56,11 +56,11 @@ export default function MainHero() {
             <section className="relative flex w-full justify-center bg-[#06012D] px-4 py-16 md:px-0">
                 <div className="flex w-full max-w-[1440px] flex-col items-center gap-8">
                     <div className="isolate flex w-full max-w-[343px] flex-col items-center justify-center gap-6 md:max-w-[1120px]">
-                        <p className="font-hurme flex w-full items-center justify-center text-center text-[48px] font-semibold leading-[58px] text-white capitalize md:text-[68px] md:leading-[76px] md:tracking-[0.02em]">
+                        <p className="font-hurme-semibold font-semibold text-center text-white text-[48px] leading-[58px] md:text-[68px] md:leading-[76px] md:tracking-[1.36px] flex w-full items-center justify-center capitalize">
                             Meet Rated
                         </p>
                         <div className="flex w-full flex-col items-center gap-6">
-                            <p className="font-hurme w-full text-center text-[18px] font-normal leading-[25px] text-white md:text-[24px] md:leading-[34px]">
+                            <p className="w-full text-center text-white font-normal text-[18px] leading-[25px] md:text-[24px] md:leading-[34px]">
                                 Your product discovery platform that drives confident purchases
                             </p>
                         </div>
@@ -102,19 +102,19 @@ export default function MainHero() {
                             <div className="z-10 bg-shopping-overlay font-hurme absolute left-[74px] top-[calc(50%_-_113.5px_+_0.5px)] flex h-[227px] w-[629px] flex-col items-center justify-center gap-6 rounded-2xl  px-8 py-8 text-white ">
                                 <div className="pointer-events-none absolute left-8 top-[147px] h-12 w-[565px] rounded-full bg-[rgba(6,1,45,0.2)] blur-[8.4px]" aria-hidden />
                                 <div className="relative z-11 flex flex-col gap-4">
-                                    <h2 className="text-[48px] font-semibold leading-[58px] tracking-[0.02em]">
+                                    <h2 className="font-hurme-semibold font-semibold text-white text-[32px] leading-[38px] md:text-[48px] md:leading-[58px] md:tracking-[0.96px]">
                                         Elevate Your <br />Shopping Experience
                                     </h2>
-                                    <p className="text-[18px] leading-[25px] text-white/90">
+                                    <p className="text-[18px] leading-[25px] text-white">
                                         Rated cuts through the noise by analyzing millions of reviews, specs, and performance signals to deliver the best-in-class options.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="relative flex w-full max-w-[343px] flex-col items-center gap-6 rounded-2xl bg-shopping-mobile-card px-4 py-8 text-center text-white  md:hidden">
+                        <div className="relative flex w-full max-w-[350px] flex-col items-center gap-6 rounded-2xl bg-shopping-mobile-card px-4 py-8 text-center text-white  md:hidden">
                             <div className="font-hurme relative z-10 flex flex-col items-center gap-6">
-                                <h2 className="w-full text-center text-[32px] font-semibold leading-[38px] text-white">
+                                <h2 className="font-hurme-semibold font-semibold text-white text-[32px] leading-[38px] md:text-[48px] md:leading-[58px] md:tracking-[0.96px]">
                                     Elevate Your Shopping Experience
                                 </h2>
                                 <p className="w-full text-center text-[15px] leading-[21px] text-white">

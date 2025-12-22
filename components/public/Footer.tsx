@@ -16,7 +16,7 @@ export default function FooterSection() {
             </a>
 
           </div>
-          <div className="md:col-span-1 md:text-left flex items-center md:pr-4">
+          <div className="text-white text-[15px] leading-[21px] tracking-normal md:col-span-1 md:text-left flex items-center md:pr-4">
             Rated is your intelligent product-discovery platform. We cut through the noise by analyzing millions of
             reviews, specs, and performance signals to highlight the best-in-class options.
           </div>
@@ -24,7 +24,7 @@ export default function FooterSection() {
           {/* Follow Us - centered on mobile, 4 icons in a row */}
           <div className="md:col-start-5 md:row-start-1 flex  items-center md:items-start justify-center md:justify-end">
             <div className="">
-              <h4 className="font-semibold text-base mb-4 text-center md:text-left">Follow Us</h4>
+              <h4 className="font-semibold font-hurme-semibold text-[18px] leading-[22px] tracking-[0.36px] mb-4 text-center md:text-left">Follow Us</h4>
               <div className="flex md:grid md:grid-cols-2 md:w-[120px]">
                 <a
                   href="https://www.facebook.com/rated.xyz"
@@ -66,8 +66,8 @@ export default function FooterSection() {
             {/* Company Column */}
             <div className="md:flex md:justify-end">
               <div>
-                <h4 className="font-semibold text-base mb-4">Company</h4>
-                <ul className="space-y-2.5 text-gray-300 text-sm">
+                <h4 className="font-semibold font-hurme-semibold text-[18px] leading-[22px] tracking-[0.36px] mb-4">Company</h4>
+                <ul className="space-y-2.5 text-gray-300 text-[15px] leading-[21px] tracking-normal">
                   <li>
                     <a href="/about-us" className="hover:text-white transition-colors">
                       About
@@ -96,8 +96,8 @@ export default function FooterSection() {
             {/* More Column */}
             <div className="md:flex md:justify-end">
               <div>
-                <h4 className="font-semibold text-base mb-4">More</h4>
-                <ul className="space-y-2.5 text-gray-300 text-sm">
+                <h4 className="font-semibold font-hurme-semibold text-[18px] leading-[22px] tracking-[0.36px] mb-4">More</h4>
+                <ul className="space-y-2.5 text-gray-300 text-[15px] leading-[21px] tracking-normal">
                   <li>
                     <a href="/categories" className="hover:text-white transition-colors">
                       Categories
@@ -126,7 +126,7 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-sm">
+        <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-[13px] leading-[16px] tracking-normal">
           <div className="flex flex-row md:flex-row items-center gap-3 md:gap-6 text-gray-300 text-center">
             <a href="/terms-of-use" className="hover:text-white transition-colors">
               Terms of Use

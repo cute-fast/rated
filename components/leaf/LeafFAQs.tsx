@@ -30,7 +30,7 @@ export default function LeafFAQs({ faqData }: { faqData: any[] }) {
   return (
     <div className="pb-16 pt-12 md:pt-[88px] px-6">
       <div className="max-w-[960px] mx-auto">
-        <h2 className="text-[24px] h-[49px] font-bold bg-[#F4F7FF] items-center flex pl-5">FAQs</h2>
+        <h2 className="font-hurme-semibold font-semibold text-[20px] leading-[24px] tracking-normal md:text-[24px] md:leading-[29px] md:tracking-[0.48px] h-[49px] bg-[#F4F7FF] items-center flex pl-5">FAQs</h2>
 
         <div className="mb-8">
           {faqItems.map((item) => (
@@ -42,7 +42,7 @@ export default function LeafFAQs({ faqData }: { faqData: any[] }) {
                 onClick={() => toggleFAQ(item.id)}
                 className="w-full px-6 py-[30px] flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
-                <span className="text-[15px] font-extrabold text-gray-900 text-left">
+                <span className="font-hurme-bold font-bold text-[15px] leading-[23px] text-[#06012D] text-left">
                   {item.question}
                 </span>
                 {openId === item.id ? (
@@ -54,7 +54,7 @@ export default function LeafFAQs({ faqData }: { faqData: any[] }) {
 
               {openId === item.id && (
                 <div className="px-6 py-4 border-t border-gray-200 bg-gray-50">
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="content-text">
                     {item.answer}
                   </p>
                 </div>
@@ -64,10 +64,10 @@ export default function LeafFAQs({ faqData }: { faqData: any[] }) {
         </div>
 
         <div className="pt-10 pb-6 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-3">
-            Your Shortcut To Smarter Buys
+          <h3 className="font-semibold font-hurme-semibold mb-3 text-[24px] leading-[29px] md:text-[36px] md:leading-[43px] md:tracking-[0.72px]">
+            Your Shortcut To<br className='md:hidden' /> Smarter Buys
           </h3>
-          <p className="text-[15px] text-gray-700 leading-relaxed">
+          <p className="content-text text-[#06012D] leading-relaxed">
             Top Rated is built to save you time and frustration. We identify the products that consistently exceed expectations by merging expert research with real-world data. Our essential highlights, performance breakdowns, and simple side-by-side comparisons so you can make a confident choice faster. Whether it's over 600 product categories, top-rated delivers the clarity you need to buy smart.
           </p>
         </div>

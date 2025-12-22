@@ -22,8 +22,8 @@ export default function StatsTicker() {
       <Marquee speed={50} gradient={false} pauseOnHover={false}>
         {[...stats, ...stats].map((stat, i) => (
           <div key={i} className="flex items-center space-x-2 mx-4 md:mx-8 whitespace-nowrap">
-            <span className="text-[24px] font-bold text-gray-800">{stat.label}:</span>
-            <span className="text-[24px] font-bold text-gray-900">{stat.value}</span>
+            <span className="font-hurme-semibold font-semibold text-[#06012D] text-[20px] leading-[24px] tracking-[0.4px] md:text-[24px] md:leading-[29px] md:tracking-[0.48px]">{stat.label}:</span>
+            <span className="font-hurme-semibold font-semibold text-[#06012D] text-[20px] leading-[24px] tracking-[0.4px] md:text-[24px] md:leading-[29px] md:tracking-[0.48px]">{stat.value}</span>
           </div>
         ))}
       </Marquee>

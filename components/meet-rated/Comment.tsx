@@ -96,18 +96,18 @@ export default function Comment() {
             <section className="relative flex w-full justify-center  bg-[linear-gradient(180deg,#d7d7f5_0%,#f5f7ff_32.11%)]">
                 <div className="z-[100] relative flex w-full max-w-[1312px] flex-col items-center gap-[13px] px-4 pt-12 pb-8 md:h-[796px] md:gap-8 md:pt-[64px] md:pb-[32px]">
                     <div
-                        className="font-hurme absolute z-20 hidden h-[294px] w-[600px] flex-col items-center justify-center gap-6 text-left text-[#06012D] md:flex"
+                        className="font-hurme absolute z-20 hidden h-[294px] w-[630px] flex-col items-center justify-center gap-6 text-left text-[#06012D] md:flex"
                         style={{
                             right: "calc(50% - 1312px/2 + 109px)",
                             top: "calc(64px + 350px - 147px - 149.5px)",
                             padding: "32px 0px 32px 129px",
                         }}
                     >
-                        <div className="flex flex-col justify-center items-start p-0 w-[471px] h-[41px]">
-                            <span className="text-[12px] uppercase tracking-[0.2em] text-[#06012D] font-normal leading-[15px]">Powered by</span>
-                            <span className="inline-flex h-6 w-[104px] bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent font-semibold text-[24px] leading-[24px] tracking-[0.02em]" >Buyer IQ</span>
+                        <div className="flex flex-col justify-center items-start p-0 w-full h-[41px]">
+                            <span className="text-[13px] uppercase tracking-[2.6px] text-[#06012D] font-normal leading-[15px]">Powered by</span>
+                            <span className="inline-flex h-6 w-[104px] bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent font-hurme-semibold font-semibold text-[24px] leading-[24px] tracking-[0.02em]" >Buyer IQ</span>
                         </div>
-                        <h3 className="w-[471px] h-[68px] text-[36px] font-semibold leading-[43px] tracking-[0.01em] ">
+                        <h3 className="text-[36px] font-hurme-semibold font-semibold leading-[43px] tracking-[0.72px] ">
                             The Trust Operating System For Commerce
                         </h3>
                         <p className="text-[15px] leading-[21px]">
@@ -120,10 +120,10 @@ export default function Comment() {
                             <span className="font-hurme text-[12px] uppercase tracking-[0.2em] text-[#06012D]/70">Powered by</span>
                             <span className="inline-flex h-6 w-[104px] bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent font-semibold text-[24px] leading-[24px] tracking-[0.02em]">Buyer IQ</span>
                         </div>
-                        <h3 className="font-hurme w-full text-[28px] font-semibold leading-[34px] tracking-[0.02em] text-[#06012D]">
-                            The Trust Operating System For Commerce
+                        <h3 className="font-hurme-semibold font-semibold w-full text-[28px] font-semibold leading-[34px] text-[#06012D]">
+                            The Trust Operating System <br className="md:hidden" /> For Commerce
                         </h3>
-                        <p className="font-hurme w-full text-[15px] leading-[21px] text-[#06012D]">
+                        <p className="font-hurme max-w-[343px] text-[15px] leading-[21px] text-[#06012D]">
                             Powered by <strong>Buyer IQ</strong>, our decision engine turns messy product chatter into one clean, portable <strong>0-10 score</strong> that cannot be bought, faked, or gamed. It gives buyers a single source of truth and gives brands and retailers a standard they can deploy anywhere.
                         </p>
                     </div>
@@ -164,7 +164,7 @@ export default function Comment() {
                                             className="flex w-full max-w-[243px] flex-col gap-6 rounded-lg border border-[#E7E7E7] bg-[#F9F9F9] p-4 shadow-[0px_2px_4px_rgba(6,1,45,0.06)]"
                                         >
                                             <div className="flex items-center gap-2">
-                                                <h4 className="font-hurme text-[18px] font-semibold leading-[22px] tracking-[0.02em] text-[#06012D]">
+                                                <h4 className="font-hurme-semibold font-semibold text-[18px] leading-[22px] tracking-[0.36px] text-[#06012D]">
                                                     {item.label}
                                                 </h4>
                                                 <div
@@ -200,7 +200,7 @@ export default function Comment() {
                                     className="flex h-[163px] w-[311px] flex-col gap-4 rounded-lg border border-[#E7E7E7] bg-[#F9F9F9] p-4 shadow-[0px_2px_4px_rgba(6,1,45,0.06)]"
                                 >
                                     <div className="flex items-center gap-2">
-                                        <h4 className="font-hurme text-[18px] font-semibold leading-[22px] tracking-[0.02em] text-[#06012D]">
+                                        <h4 className="font-hurme-semibold font-semibold text-[18px] leading-[22px] tracking-[0.036px] text-[#06012D]">
                                             {item.label}
                                         </h4>
                                         <div
@@ -208,7 +208,7 @@ export default function Comment() {
                                             style={{ backgroundColor: item.barColor }}
                                         />
                                     </div>
-                                    <p className="font-hurme text-[15px] leading-[21px] text-[#06012D]">{item.body}</p>
+                                    <p className="text-[15px] leading-[21px] text-[#06012D]">{item.body}</p>
                                 </div>
                             ))}
                         </div>

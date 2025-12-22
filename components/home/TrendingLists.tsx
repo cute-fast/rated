@@ -91,8 +91,8 @@ export default function TrendingLists() {
         <section className="px-4 py-16 bg-white">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <p className="text-[18px] tracking-[0.05em] leading-[18px] uppercase font-semibold">TOP RATED</p>
-                    <h2 className="text-[32px] md:text-[48px] font-bold leading-[58px] tracking-[0.05em]">Trending Lists</h2>
+                    <p className=" font-normal text-[18px] tracking-[0.9px] leading-[18px] uppercase">TOP RATED</p>
+                    <h2 className="font-hurme-semibold font-semibold text-[32px] tracking-[0.64px] leading-[38px] md:text-[48px] md:tracking-[0.96px] md:leading-[58px]">Trending Lists</h2>
                 </div>
 
                 {/* Desktop View - Show all cards */}
@@ -110,7 +110,7 @@ export default function TrendingLists() {
                                     />
                                 </div>
 
-                                <p className="text-[15px] leading-[23px] font-bold text-center">{item.name}</p>
+                                <p className="text-[15px] leading-[23px] tracking-normal font-bold text-center font-hurme-bold">{item.name}</p>
 
                             </div>
                         </a>
@@ -167,7 +167,7 @@ export default function TrendingLists() {
                                                 />
                                             </div>
 
-                                            <p className="text-[15px] leading-[23px] font-bold text-center">{item.name}</p>
+                                            <p className="text-[15px] tracking-normal font-hurme-bold leading-[23px] font-bold text-center">{item.name}</p>
 
                                         </div>
                                     </a>

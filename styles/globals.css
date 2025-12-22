@@ -1,17 +1,29 @@
 @font-face {
-    font-family: "Klarna Text";
-    src: url("/fonts/klarna-text.otf") format("otf");
+  font-family: 'Hurme Geometric Sans 1';
+  src: url('/fonts/HurmeGeometricSans1.otf') format('opentype');
 }
 
 @font-face {
-    font-family: "Klarna Title";
-    src: url("/fonts/klarna-title.woff") format("woff");
+  font-family: 'Hurme Geometric Sans 1 Bold';
+  src: url('/fonts/HurmeGeometricSans1-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Hurme Geometric Sans 1 SemiBold';
+  src: url('/fonts/HurmeGeometricSans1-SemiBold.otf') format('opentype');
+}
+
+/* @font-face {
+  font-family: 'Hurme Geometric Sans 1';
+  src: url('/fonts/HurmeGeometricSans1.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Hurme Geometric Sans 1';
   src: url('/fonts/HurmeGeometricSans1.otf') format('opentype');
-}
+} */
+
+
 
 body *{
     font-family: "Hurme Geometric Sans 1";
@@ -26,9 +38,46 @@ body *{
     font-family: "Hurme Geometric Sans 1";
 }
 
-.font-noto {
-    font-family: "Noto Sans", sans-serif;
+.font-hurme-bold {
+    font-family: "Hurme Geometric Sans 1 Bold";
 }
+
+.font-hurme-semibold {
+    font-family: "Hurme Geometric Sans 1 SemiBold";
+}
+
+@media (min-width: 768px) {
+    .md\:font-hurme-semibold {
+        font-family: "Hurme Geometric Sans 1 SemiBold";
+    }
+}
+
+.bt-style{
+    font-family: "Hurme Geometric Sans 1 Bold";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: white;
+}
+.bt-style:hover{
+    background-color: #06012D;
+}
+
+
+
+.content-text{
+    font-family: "Hurme Geometric Sans 1";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0;
+    color: #06012D;
+}
+
+
+
+
 
 .bg-shopping-clouds {
     background-image:

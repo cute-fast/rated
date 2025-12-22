@@ -8,7 +8,7 @@ export default function Privacy() {
                     <div className="h-[130px] relative flex items-center justify-center">
                         <img src="/privacy.jpg" alt="Privacy Policy" className="z-0 absolute top-0 left-0 w-full h-full object-cover object-center rounded-lg" />
                         <div className="z-10 absolute top-0 left-0 bg-black opacity-[0.5] w-full h-full rounded-lg" />
-                        <h1 className="text-[32px] md:text-[48px] text-center z-20 text-white  font-semibold">Privacy Policy</h1>
+                        <h1 className="text-[32px] leading-[39px] md:text-[48px] md:leading-[58px] text-center z-20 text-white font-hurme-semibold font-semibold">Privacy Policy</h1>
                     </div>
                 </div>
 

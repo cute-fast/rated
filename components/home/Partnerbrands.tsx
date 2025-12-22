@@ -16,10 +16,10 @@ export default function PartnerBrands() {
         <section className="py-16 bg-white">
             <div className="container mx-auto max-w-[1312px] px-4 lg:px-0">
                 <div className="text-center mb-6 md:mb-12">
-                    <h2 className="text-[24px] md:text-[36px] md:text-5xl font-bold mb-4">
-                        Connected With <img src="/brands/logo_amazon.png" alt="Amazon" className="w-[113px] inline-block -mb-[6px]" />
+                    <h2 className="text-[#06012D] font-hurme-semibold font-semibold text-[24px] leading-[29px] tracking-normal md:text-[36px] md:leading-[43px] md:tracking-[0.72px] mb-4">
+                        Connected With <img src="/brands/logo_amazon.png" alt="Amazon" className="w-[80px] md:w-[122px] inline-block -mb-[8px] md:-mb-[14px]" />
                     </h2>
-                    <p className="text-[15px]">to bring you some of the worlds top Rated brands.</p>
+                    <p className="content-text">to bring you some of the worlds top Rated brands.</p>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[20px] mx-auto">

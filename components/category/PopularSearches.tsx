@@ -36,7 +36,7 @@ export default function PopularSearches() {
               className="inline-flex items-center gap-2 px-4 py-2 bg-[#f4f7ff] hover:bg-[#D8D8FF] rounded-lg text-[#000000] font-semibold transition-colors"
             >
               <Search className="w-4 h-4" />
-              <span className="text-[11px]">{search}</span>
+              <span className="font-hurme-semibold font-semibold text-[11px] leading-[16px]">{search}</span>
             </Link>
           ))}
         </div>

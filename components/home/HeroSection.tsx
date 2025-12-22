@@ -118,12 +118,12 @@ export default function HeroSection() {
                 <div className="max-w-8xl mx-auto relative z-[10]">
                     <div className="px-4 md:px-[106px] pt-[48px] md:pt-[93px] pb-[48px] md:pb-[93px] gap-12 items-center">
                         <div>
-                            <h1 className="hidden md:block text-[48px] md:text-[68px] font-bold mb-4 leading-[76px] tracking-[0.02em]">
+                            <h1 className="font-semibold font-hurme-semibold text-[48px] tracking-normal leading-[58px] md:text-[68px] md:tracking-[1.36px] md:leading-[76px] hidden md:block mb-4">
                                 Smart Shopping,
                                 <br />
                                 Simplified
                             </h1>
-                            <h1 className="md:hidden text-[48px] md:text-[68px] font-bold mb-6 leading-[58px] tracking-[0.02em]">
+                            <h1 className="font-semibold font-hurme-semibold text-[48px] tracking-normal leading-[58px] md:text-[68px] md:tracking-[1.36px] md:leading-[76px] md:hidden mb-6">
                                 Smart<br />Shopping,
                                 <br />
                                 Simplified
@@ -134,11 +134,11 @@ export default function HeroSection() {
                                 <br />
                                 Simplified
                             </h1> */}
-                            <p className="hidden md:block text-[15px] text-white mb-6">
+                            <p className="text-white text-[15px] font-normal leading-[21px] tracking-normal hidden md:block mb-6">
                                 Discover top-rated products, powered by big data
                                 <br />and millions of consumer insights
                             </p>
-                            <p className="md:hidden text-[15px] text-white mb-6">
+                            <p className="md:hidden text-white text-[15px] font-normal leading-[21px] tracking-normal mb-6">
                                 Discover top-rated products, powered by big data
                                 and millions of consumer insights
                             </p>
@@ -154,7 +154,7 @@ export default function HeroSection() {
                                             }
                                         }}
                                         placeholder="Search"
-                                        className="text-[15px] px-4 flex-1 border-0 bg-transparent text-black placeholder:text-gray-500 focus:outline-none text-base px-0 text-base"
+                                        className="text-[15px] leading-[21px] text-[#06012D] tracking-normal px-4 flex-1 border-0 bg-transparent placeholder:text-[#06012D] focus:outline-none px-0"
                                     />
 
                                     <button type="submit" className="pl-4 pr-[15px] py-[14px]">

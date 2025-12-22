@@ -11,13 +11,13 @@ export default function Feature() {
           <div className="md:flex-1 flex justify-center">
             <div className="max-w-[600px] pt-8 pb-0 md:pb-8">
               <div className="flex items-center justify-center">
-                <h4 className="inline-flex text-[36px] leading-[43px] font-bold bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-1">
+                <h4 className="inline-flex font-hurme-semibold font-semibold text-[36px] tracking-[0.72px] leading-[43px] bg-[linear-gradient(270deg,#D76528_-1.41%,#C2418B_33.68%,#9E53D6_68.76%,#1D70D1_98.84%)] bg-clip-text text-transparent text-center mb-1">
                   Buyer IQ
                 </h4>
               </div>
 
-              <h2 className="mb-6 font-bold text-[32px] lg:text-[48px] text-center leading-[38px] md:leading-[58px] tracking-[0.02em]">The Science of<br /> Smart Shopping</h2>
-              <p className="hidden md:block mb-8 text-sm leading-relaxed text-center">
+              <h2 className="font-hurme-semibold font-semibold text-[#06012D] text-[32px] leading-[38px] tracking-normal md:text-[48px] md:leading-[58px] md:tracking-[1.16px] text-center mb-2">The Science of<br /> Smart Shopping</h2>
+              <p className="hidden md:block mb-8 content-text text-center text-[14px]">
                 Behind every score is Buyer IQ - an engine that explores millions of data points from trusted
                 sources to reveal the top-rated products - powered by real buyer feedback, not lab tests.
               </p>
@@ -25,7 +25,7 @@ export default function Feature() {
                 <div className="h-12 p-[2px] rounded-lg bg-gradient-to-r from-[#3D00A6] via-[#E500FF] to-[#080078]">
                   <button
                     type="submit"
-                    className="h-full rounded-lg bg-[#0E00DE] px-8 text-base font-semibold text-white hover:bg-blue-700"
+                    className="h-full rounded-lg bg-[#0E00DE] px-8 bt-style"
                   >
                     LEARN MORE
                   </button>
